@@ -1,7 +1,14 @@
-the list of all the teachers
+<h2>Our teachers</h2>
 
-<% @teachers.each do |t| %>
-<p>
-<%= t.name %>
-</p>
-<% end %>
+<div class="card-columns p-2">
+  <% @teachers.each do |t| %>
+    <div class="card bg-light" >
+      <img class="card-img-top" src= <%= t.image_url%> >
+      <div class="card-body">
+        <h5 class="card-title"><%= t.name%> - <%= t.spiritual_name%></h5>
+        <p class="card-text"><%= t.introduction&.slice(0, 200)%></p>
+        <a href="<%=teacher_path(t)%>" class="btn btn-outline-info">to teacher's page</a>
+      </div>
+    </div>
+  <% end %>
+</div>

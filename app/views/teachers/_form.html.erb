@@ -1,3 +1,64 @@
-<%= form_for(@teacher) do |f| %>
+<%= form_for(@teacher) do |form| %>
+  <% if @teacher.errors.present? %>
+    <p>
+      <%= @teacher.errors.full_messages.join(", ") %>
+    </p>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :name %> <br>
+    <%= form.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :spiritual_name %> <br>
+    <%= form.text_field :spiritual_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image_url %> <br>
+    <%= form.text_field :image_url, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :webpage_url %> <br>
+    <%= form.text_field :webpage_url, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :phone %> <br>
+    <%= form.text_field :phone, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :email %> <br>
+    <%= form.email_field :email, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :password %> <br>
+    <%= form.password_field :password, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :password_confirmation %> <br>
+    <%= form.password_field :password_confirmation, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :public_contact %> <br>
+    <%= form.check_box :public_contact %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :introduction %> <br>
+    <%= form.text_area(
+      :introduction,
+      rows: 5,
+      placeholder: "What are your thoughts?",
+      class: "form-control")  %>
+  </div>
+
+  <%= form.submit class: "btn btn-outline-primary" %>
 
 <% end %>
