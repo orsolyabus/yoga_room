@@ -21,6 +21,7 @@
                 <p class="card-text"><%= @teacher.email%></p>
               <% end %>
               <p class="card-text"><%= @teacher.introduction%></p>
+              <%= link_to("edit", edit_teacher_path(@teacher))%>
             </div>
           </div>
         </div>

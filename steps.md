@@ -1,7 +1,7 @@
 - [x] 1. setup
 - [x] 2. Teacher user model
 - [x] 3. teacher crud
-- [ ] 4. techer views
+- [x] 4. techer views
 - [ ] 5. login / sessions
 - [ ] 6. class model
 - [ ] 7. class crud
