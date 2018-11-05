@@ -1,0 +1,5 @@
+to do later when it is needed
+
+Add delegates in the Tribe model
+Tribe has_many :animals
+  delegate :lions, :meerkats, :wild_boars, to: :animals
