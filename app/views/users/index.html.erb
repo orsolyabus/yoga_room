@@ -1,28 +1,14 @@
-<h1>Kundalini Yoga Community</h1>
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Type</th>
+<div class="container-fluid" id="main-index">
+  <h2>Our <%= @user_type.pluralize%></h2>
 
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-</thead>
-  <tbody>
+  <div class="card-columns p-2 ">
     <% @users.each do |user| %>
-      <tr>
-        <td><%= user.name %></td>
-        <td><%= user.user_type %></td>
-        <td><%= link_to 'Show', sti_user_path(user.user_type, user) %></td>
-        <td><%= link_to 'Edit', sti_user_path(user.user_type, user, :edit) %></td>
-        <td><%= link_to 'Destroy', sti_user_path(user.user_type, user), method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to "See all #{user.user_type.pluralize}", sti_user_path(user.user_type) %></td>
-      </tr>
+      <div class="card bg-light" >
+        <div class="card-body">
+          <h5 class="card-title"><%= user.name%></h5>
+          <%= link_to 'Show', sti_user_path(user.user_type, user) %>
+        </div>
+      </div>
     <% end %>
-  </tbody>
-</table>
-
-<%= link_to 'See all users', sti_user_path %>
-<%= link_to "New #{@user_type}", sti_user_path(@user_type, nil, :new) %>
+  </div>
+</div>

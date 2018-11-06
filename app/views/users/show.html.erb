@@ -1,3 +1,50 @@
-<h1>Hi, I'm a <%= @user.user_type %>.</h1>
-<p>My name is <%= @user.name %></p>
-<%= @user.talk %>
+<div class="container-fluid">
+  <h1><%= @user.name%></h1>
+  <div class="row">
+    <div class="col-md-8">
+      <div class="card bg-light mb-4" >
+        <div class="card-body">
+          <div class="row">
+           
+            <div class="col-sm-6">
+              <img class="img" src= "" alt="teacher profile picture">
+            </div>
+             
+            <div class="col-sm">
+              <h5 class="card-title"><%= @user.name%></h5>
+              <p class="card-text">webpage_url</p>
+              
+              <p class="card-text">phone</p>
+              <p class="card-text"><%= @user.email%></p>
+              
+              <p class="card-text">introduction</p>
+              <%if can?(:crud, @user)%>
+              <%= link_to 'Edit', sti_user_path(@user.user_type, @user, :edit) , class: "btn btn-outline-primary"%>
+              <%= link_to 'Destroy', sti_user_path(@user.user_type, @user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary" %>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md">
+      <div class="card bg-light mb-4" >       
+        <div class="card-body">
+          <h5 class="card-title"><a>class title</a></h5>
+          <p class="card-text">location</p>
+          <p class="card-text">time</p>        
+        </div>
+      </div>
+    
+      <div class="card bg-light mb-2" >       
+        <div class="card-body">
+          <h5 class="card-title"><a>class title</a></h5>
+          <p class="card-text">location</p>
+          <p class="card-text">time</p>        
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
