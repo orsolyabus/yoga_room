@@ -14,6 +14,11 @@ class Ability
     can(:crud, User) do |this_user|
       user == this_user
     end
+
+    can(:crud, Info) do |info|
+      user.is_a(Teacher) && user == info.user
+    end
+
   end
     
 end
