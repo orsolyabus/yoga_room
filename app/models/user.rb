@@ -1,16 +1,17 @@
 class User < ApplicationRecord
+  validates :name, presence: true
+  
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-]+(\.[a-z\d\-]+)*\.[a-z]+\z/i
+  validates :email, presence: true, uniqueness: true,  format: VALID_EMAIL_REGEX
+  has_secure_password
+  
   self.inheritance_column = :user_type
-  # has_secure_password
 
   scope :teachers, -> {where(user_type: 'Teacher')}
   scope :students, -> {where(user_type: 'Student')}
 
   def self.user_types
-    %w(Teacher Student)
-  end
-
-  def talk 
-    raise 'Abstract Method' 
+    %w(Student Teacher)
   end
 
 end
