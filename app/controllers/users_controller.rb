@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @info = @user.info || Info.new(user: current_user)
   end
 
   def new

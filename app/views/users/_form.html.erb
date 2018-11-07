@@ -39,3 +39,7 @@
   <%= f.submit class: "btn btn-outline-primary"%>
   
 <% end %>
+
+<div>
+<%= link_to 'Delete account', sti_user_path(@user.user_type, @user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger mt-3" %>
+</div>

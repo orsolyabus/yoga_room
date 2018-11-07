@@ -1,0 +1,44 @@
+<%= form_for(user_infos_path) do |form| %>
+  <% if @info.errors.present? %>
+    <p>
+      <%= @info.errors.full_messages.join(", ") %>
+    </p>
+  <% end %>
+
+  <div class="form-group">
+    <%= form.label :spiritual_name %> <br>
+    <%= form.text_field :spiritual_name, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :image_url %> <br>
+    <%= form.text_field :image_url, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :webpage_url %> <br>
+    <%= form.text_field :webpage_url, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :phone %> <br>
+    <%= form.text_field :phone, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label "allow to show your contact information?" %> <br>
+    <%= form.check_box :public_contact %>
+  </div>
+
+  <div class="form-group">
+    <%= form.label :introduction %> <br>
+    <%= form.text_area(
+      :introduction,
+      rows: 5,
+      placeholder: "What are your thoughts?",
+      class: "form-control")  %>
+  </div>
+
+  <%= form.submit "Create profile", class: "btn btn-outline-primary" %>
+
+<% end %>

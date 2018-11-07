@@ -1,8 +1,12 @@
-1. setup
-2. Teacher user model
-3. teacher crud
-4. class model
-5. class crud
-6. search site
-7. search engine
-8. i18n
+- [x] 1. setup
+- [x] 2. Teacher user model
+- [x] 3. teacher crud
+- [x] 4. techer views
+- [x] 5. login / sessions
+- [ ]    teacher info
+- [ ] 6. class model
+- [ ] 7. class crud
+- [ ] 8. class views
+- [ ] 9. search view
+- [ ] 10. search engine - elastic search
+- [ ] 11. i18n

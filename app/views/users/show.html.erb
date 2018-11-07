@@ -2,6 +2,7 @@
   <h1><%= @user.name%></h1>
   <div class="row">
     <div class="col-md-8">
+    
       <div class="card bg-light mb-4" >
         <div class="card-body">
           <div class="row">
@@ -19,16 +20,34 @@
               
               <p class="card-text">introduction</p>
               <%if can?(:crud, @user)%>
-              <%= link_to 'Edit', sti_user_path(@user.user_type, @user, :edit) , class: "btn btn-outline-primary"%>
-              <%= link_to 'Destroy', sti_user_path(@user.user_type, @user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-primary" %>
+              <%= link_to 'Edit account', sti_user_path(@user.user_type, @user, :edit) , class: "btn btn-outline-primary"%>
+             
               <% end %>
             </div>
           </div>
         </div>
       </div>
+
+      <div class="card bg-light mb-4" id="add_a_class" >       
+        <div class="card-body">
+          <h5 class="card-title">Introduction</h5>
+
+          <% if can? :crud, @info%>
+          <%= link_to "create profile", new_user_info_path(@user, @info), class: "btn btn-primary"%>    
+          <% end %>   
+        </div>
+      </div>
+
     </div>
 
     <div class="col-md">
+      <div class="card bg-light mb-4" id="add_a_class" >       
+        <div class="card-body">
+          <h5 class="card-title"><a>You don't have classes yet</a></h5>
+          <%= link_to "Add a class", "", class: "btn btn-primary"%>       
+        </div>
+      </div>
+
       <div class="card bg-light mb-4" >       
         <div class="card-body">
           <h5 class="card-title"><a>class title</a></h5>

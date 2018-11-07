@@ -16,7 +16,7 @@ class Ability
     end
 
     can(:crud, Info) do |info|
-      user.is_a(Teacher) && user == info.user
+      user.is_a?(Teacher) && user == info.user
     end
 
   end
