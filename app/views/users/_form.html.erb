@@ -22,8 +22,12 @@
   </div>
 
   <div class="form-group">
-      <%= f.label :user_type %><br>
-      <%= f.select :user_type, User.user_types.map {|ut| [ut.humanize, ut.camelcase]}, {}, disabled: @user_type != "User" ,class: "form-control"%> 
+      <%= f.label "are you a teacher?" %><br>
+      <%= f.label "yes" %>
+      <%= f.radio_button :is_teacher, true %> 
+      |
+      <%= f.label "no" %>
+      <%= f.radio_button :is_teacher, false %> 
   </div>
 
   <div class="form-group">
@@ -41,5 +45,5 @@
 <% end %>
 
 <div>
-<%= link_to 'Delete account', sti_user_path(@user.user_type, @user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger mt-3" %>
+<%= link_to 'Delete account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger mt-3" %>
 </div>

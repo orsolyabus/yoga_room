@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_06_034605) do
+ActiveRecord::Schema.define(version: 2018_11_08_004544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,9 +33,9 @@ ActiveRecord::Schema.define(version: 2018_11_06_034605) do
     t.string "name"
     t.string "email"
     t.string "password_digest"
-    t.string "user_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "is_teacher", default: false
   end
 
   add_foreign_key "infos", "users"

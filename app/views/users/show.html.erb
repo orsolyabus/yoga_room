@@ -20,7 +20,7 @@
               
               <p class="card-text">introduction</p>
               <%if can?(:crud, @user)%>
-              <%= link_to 'Edit account', sti_user_path(@user.user_type, @user, :edit) , class: "btn btn-outline-primary"%>
+              <%= link_to 'Edit account', edit_user_path(@user) , class: "btn btn-outline-primary"%>
              
               <% end %>
             </div>

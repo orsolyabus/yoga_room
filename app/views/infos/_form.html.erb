@@ -1,4 +1,4 @@
-<%= form_for(user_infos_path) do |form| %>
+<%= form_for([@user, @info]) do |form| %>
   <% if @info.errors.present? %>
     <p>
       <%= @info.errors.full_messages.join(", ") %>
@@ -16,8 +16,8 @@
   </div>
 
   <div class="form-group">
-    <%= form.label :webpage_url %> <br>
-    <%= form.text_field :webpage_url, class: "form-control" %>
+    <%= form.label :webpage %> <br>
+    <%= form.text_field :webpage, class: "form-control" %>
   </div>
 
   <div class="form-group">
