@@ -1,4 +1,5 @@
 class Info < ApplicationRecord
   belongs_to :user
-  # delegate :teacher, to: :user
+  validates :user_id, uniqueness: true
+  
 end

@@ -9,7 +9,7 @@ class Ability
     #   else
     #     can :read, :all
     #   end
-    alias_action(:create, :read, :update, :delete, to: :crud)
+    alias_action(:create, :read, :update, :delete, :edit, :new, to: :crud)
 
     can(:crud, User) do |this_user|
       user == this_user

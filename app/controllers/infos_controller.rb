@@ -1,7 +1,8 @@
 class InfosController < ApplicationController
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :delete]
-  before_action :authorize_user!, only: [ :edit, :update, :delete]
   before_action :find_info, only: [:show, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [ :edit, :update, :delete]
+  
 
   def new
     @info = Info.new
@@ -19,7 +20,8 @@ class InfosController < ApplicationController
     end
   end
 
-  def edit    
+  def edit  
+    @user = @info.user || current_user  
   end
 
   def update
