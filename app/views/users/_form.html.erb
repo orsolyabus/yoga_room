@@ -44,6 +44,8 @@
   
 <% end %>
 
+<% if @user.persisted? %>
 <div>
 <%= link_to 'Delete account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger mt-3" %>
 </div>
+<% end %>

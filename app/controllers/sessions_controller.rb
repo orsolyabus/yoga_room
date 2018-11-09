@@ -7,7 +7,8 @@ class SessionsController < ApplicationController
     user = User.find_by_email params[:email]
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
-
+      user.last_login = Time.now
+      user.save
       flash[:success] = "Signed in!"
       redirect_to user
     else

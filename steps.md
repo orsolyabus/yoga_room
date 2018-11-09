@@ -3,10 +3,13 @@
 - [x] 3. teacher crud
 - [x] 4. techer views
 - [x] 5. login / sessions
-- [ ]    teacher info
+- [x]    teacher info
 - [ ] 6. class model
 - [ ] 7. class crud
 - [ ] 8. class views
 - [ ] 9. search view
 - [ ] 10. search engine - elastic search
 - [ ] 11. i18n
+- [ ] class sing up
+- [ ] 13. notifications
+- [ ] 14. background jobs
