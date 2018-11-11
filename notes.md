@@ -17,9 +17,9 @@
 
 ## 2. Extended product
 * classes can have type, style, duration ...
-* type : regular class, course, workshop, camp, teacher training
+* type : weekly class, course, workshop, camp, teacher training
 * style: kundalini yoga, meditation, gong, shakit dance, sat nam rasayan, chilrdens yoga, other yoga ...
-* users can serach based on distance in km
+* users can search based on distance in km
 * users can sign in and save a search, and when there is a new class, that matches that search, they get an e-mail notification.
 * teachers can indicate when a class is full
 * students can sign up on classes.
