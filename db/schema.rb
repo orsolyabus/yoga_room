@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_11_035423) do
+ActiveRecord::Schema.define(version: 2018_11_11_021700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,16 +60,7 @@ ActiveRecord::Schema.define(version: 2018_11_11_035423) do
     t.integer "duration"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "location_id"
-    t.bigint "time_slot_id"
-    t.bigint "user_id"
-    t.index ["location_id"], name: "index_yoga_classes_on_location_id"
-    t.index ["time_slot_id"], name: "index_yoga_classes_on_time_slot_id"
-    t.index ["user_id"], name: "index_yoga_classes_on_user_id"
   end
 
   add_foreign_key "infos", "users"
-  add_foreign_key "yoga_classes", "locations"
-  add_foreign_key "yoga_classes", "time_slots"
-  add_foreign_key "yoga_classes", "users"
 end
