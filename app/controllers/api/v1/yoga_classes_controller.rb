@@ -1,4 +1,4 @@
-class Api::V1::YogaClassController < ApplicationController
+class Api::V1::YogaClassesController < ApplicationController
 
   def create
     yoga_class = YogaClass.new yoga_class_params
@@ -8,7 +8,7 @@ class Api::V1::YogaClassController < ApplicationController
     if yoga_class.save
       render json: yoga_class
     else
-      render json:{ errors: question.errors.full_messages }
+      render json:{ errors: yoga_class.errors.full_messages }
     end
 
   end
@@ -26,7 +26,7 @@ class Api::V1::YogaClassController < ApplicationController
     if yoga_class.update yoga_class_params
       render json: {status: :success}
     else
-      render json:{ errors: question.errors.full_messages }
+      render json:{ errors: yoga_class.errors.full_messages }
     end
   end
 
