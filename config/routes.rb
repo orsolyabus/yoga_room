@@ -14,7 +14,9 @@ Rails.application.routes.draw do
   #       resources :infos, only: [:new, :edit, :update, :create, :destroy]
   #     end
   #     resource :sessions, only: [:new, :create, :destroy]
-      resources :yoga_class
+      resources :yoga_classes
+      resources :locations
+      # resources :time_slots
     end
   end
 
