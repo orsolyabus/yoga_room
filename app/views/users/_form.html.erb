@@ -1,44 +1,10 @@
-<%= form_for(@user) do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= simple_form_for(@user) do |f| %>
 
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group">
-    <%= f.label :name %><br>
-    <%= f.text_field :name, class: "form-control"%>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :email %> <br>
-    <%= f.email_field :email, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-      <%= f.label "are you a teacher?" %><br>
-      <%= f.label "yes" %>
-      <%= f.radio_button :is_teacher, true %> 
-      |
-      <%= f.label "no" %>
-      <%= f.radio_button :is_teacher, false %> 
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password %> <br>
-    <%= f.password_field :password, class: "form-control" %>
-  </div>
-
-  <div class="form-group">
-    <%= f.label :password_confirmation %> <br>
-    <%= f.password_field :password_confirmation, class: "form-control" %>
-  </div>
+  <%= f.input :name, label: "full name"%>
+  <%= f.input :email %>
+  <%= f.input :is_teacher, as: :radio_buttons, label: "Are you a teacher?"%>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
 
   <%= f.submit class: "btn btn-outline-primary"%>
   
@@ -46,6 +12,6 @@
 
 <% if @user.persisted? %>
 <div>
-<%= link_to 'Delete account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger mt-3" %>
+<%= link_to 'Delete account', user_path(@user), method: :delete, data: { confirm: 'Are you certain?' }, class: "btn btn-outline-danger mt-3" %>
 </div>
 <% end %>

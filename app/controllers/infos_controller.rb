@@ -10,11 +10,12 @@ class InfosController < ApplicationController
   end
 
   def create
+    puts "------------create--------------"
     @info = Info.new(info_params)
     @info.user = current_user
     if @info.save
       flash[:success] = "profile successfully created."
-      redirect_to @info.user
+      redirect_to user_path(current_user)
     else
       render :new
     end
@@ -25,10 +26,12 @@ class InfosController < ApplicationController
   end
 
   def update
+    puts "--------------updating-----------"
     if @info.update info_params
       flash[:success] = "profile successfully updated."
-      redirect_to @info.user
+      redirect_to user_path(current_user)
     else
+      flash[:danger] = @info.errors.full_messages
       render :edit
     end
   end

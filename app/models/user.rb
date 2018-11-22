@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_one :info
   has_secure_password
   has_many :yoga_classes
+
 end
