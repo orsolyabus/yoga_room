@@ -1,6 +1,7 @@
 <%= simple_form_for([current_user, @info]) do |f| %>
   <%= f.input :spiritual_name %>
   <%= f.input :image_url %>
+  <%= f.input :image %>
   <%= f.input :webpage %>
   <%= f.input :phone, label: "phone number" %>
   <%= f.input :public_contact, label: "allow to show your contact information?" %>

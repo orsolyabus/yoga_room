@@ -10,7 +10,6 @@ class InfosController < ApplicationController
   end
 
   def create
-    puts "------------create--------------"
     @info = Info.new(info_params)
     @info.user = current_user
     if @info.save
@@ -26,12 +25,11 @@ class InfosController < ApplicationController
   end
 
   def update
-    puts "--------------updating-----------"
     if @info.update info_params
       flash[:success] = "profile successfully updated."
       redirect_to user_path(current_user)
     else
-      flash[:danger] = @info.errors.full_messages
+      flash[:danger] = @info.errors.full_messages.join(" ")
       render :edit
     end
   end
@@ -48,7 +46,7 @@ class InfosController < ApplicationController
   end
 
   def info_params
-    params.require(:info).permit(:spiritual_name, :image_url, :webpage, :phone, :introduction, :public_contact) 
+    params.require(:info).permit(:spiritual_name, :image_url, :webpage, :phone, :introduction, :public_contact, :image) 
   end
 
   def authorize_user!
