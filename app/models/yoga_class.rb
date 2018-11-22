@@ -1,5 +1,5 @@
 class YogaClass < ApplicationRecord
-  validates :title, :description, :duration, presence: true
+  validates :title, :description, presence: true
   # belongs_to :location
   # belongs_to :time_slot
   # belongs_to :user

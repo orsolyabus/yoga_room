@@ -42,7 +42,7 @@ class Api::V1::YogaClassesController < ApplicationController
   end
 
   def yoga_class_params
-    params.require(:yoga_class).permit(:title, :description, :duration )
+    params.require(:yoga_class).permit(:title, :description )
   end
 
 end
