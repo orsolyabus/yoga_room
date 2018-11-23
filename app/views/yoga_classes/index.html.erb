@@ -1,2 +1,8 @@
-<h1>YogaClasses#index</h1>
-<p>Find me in app/views/yoga_classes/index.html.erb</p>
+<h1>Yoga Classes</h1>
+<ul>
+  <% @yoga_classes.each do |yc| %>
+    <li>
+      <%= link_to(yc.title, yoga_class_path(yc) )%>
+    </li>
+  <% end %>
+</ul>

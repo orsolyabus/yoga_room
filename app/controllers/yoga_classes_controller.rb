@@ -1,5 +1,5 @@
 class YogaClassesController < ApplicationController
-  before_action :find_yoga_class, only: [:show, :update, :destroy]
+  before_action :find_yoga_class, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def new
