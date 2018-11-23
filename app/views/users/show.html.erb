@@ -44,30 +44,19 @@
     </div>
 
     <div class="col-md">
-      <div class="card bg-light mb-4" id="add_a_class" >      <% if can? :crud, YogaClass %>
-        <div class="card-body">
-          
-          <h5 class="card-title"><a>You don't have classes yet</a></h5>
-          <%= link_to "Add a class", "", class: "btn btn-primary"%>       
-        </div>
-        <% end %>
-      </div>
+      <% if current_user == @user %>                  
+        <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
+      <% end %>
+      <% @user.yoga_classes.each do |yc| %>
 
-      <div class="card bg-light mb-4" >       
-        <div class="card-body">
-          <h5 class="card-title"><a>class title</a></h5>
-          <p class="card-text">location</p>
-          <p class="card-text">time</p>        
+        <div class="card bg-light mb-4" >       
+          <div class="card-body">
+            <h5 class="card-title"><a><%= yc.title %></a></h5>
+            <p class="card-text">location</p>
+            <p class="card-text">time</p>        
+          </div>
         </div>
-      </div>
-    
-      <div class="card bg-light mb-2" >       
-        <div class="card-body">
-          <h5 class="card-title"><a>class title</a></h5>
-          <p class="card-text">location</p>
-          <p class="card-text">time</p>        
-        </div>
-      </div>
+      <% end %>
     </div>
 
   </div>
