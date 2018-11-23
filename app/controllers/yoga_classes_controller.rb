@@ -10,6 +10,7 @@ class YogaClassesController < ApplicationController
   def create
     @yoga_class = YogaClass.new yoga_class_params
     @yoga_class.user = current_user
+    @yoga_class.location = Location.find params[:yoga_class][:location_id]
     if @yoga_class.save
       redirect_to @yoga_class
     else
@@ -47,7 +48,7 @@ class YogaClassesController < ApplicationController
   end
 
   def yoga_class_params
-    params.require(:yoga_class).permit(:title, :description )
+    params.require(:yoga_class).permit(:title, :description, :location )
   end
 
   def authorize_user!

@@ -1,6 +1,7 @@
 <%= simple_form_for @yoga_class do |f| %>
   <%= f.input :title %>
   <%= f.input :description %>
+  <%= f.association :location %>
   <%= f. submit class: "btn btn-primary" %>
 
 <% end %>
