@@ -1,6 +1,7 @@
 class YogaClassesController < ApplicationController
   before_action :find_yoga_class, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authorize_user!, only: [:new, :create, :edit, :update, :destroy]
 
   def new
     @yoga_class = YogaClass.new
@@ -8,6 +9,7 @@ class YogaClassesController < ApplicationController
 
   def create
     @yoga_class = YogaClass.new yoga_class_params
+    @yoga_class.user = current_user
     if @yoga_class.save
       redirect_to @yoga_class
     else
@@ -48,6 +50,10 @@ class YogaClassesController < ApplicationController
 
   def yoga_class_params
     params.require(:yoga_class).permit(:title, :description )
+  end
+
+  def authorize_user!
+    flash[:warning] = "you have to be a teacher to do that" unless can? :crud, YogaClass
   end
 
 end
