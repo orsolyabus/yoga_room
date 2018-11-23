@@ -18,8 +18,13 @@ class Ability
     can(:crud, Info) do |info|
       user == info.user
     end
+
     can(:crud, YogaClass) do |yc|
-      user.is_teacher === true && user == yc.user
+      user.is_teacher && user == yc.user
+    end
+
+    can(:crud, Location) do |l|
+      user.is_teacher
     end
 
   end

@@ -13,7 +13,6 @@ class YogaClassesController < ApplicationController
     if @yoga_class.save
       redirect_to @yoga_class
     else
-      flash[:danger] = @yoga_class.errors.full_messages.join(" ")
       render :new
     end
   end
@@ -29,7 +28,6 @@ class YogaClassesController < ApplicationController
     if @yoga_class.update yoga_class_params
       redirect_to @yoga_class
     else
-      flash[:danger] = @yoga_class.errors.full_messages.join(" ")
       render :new
     end
   end
