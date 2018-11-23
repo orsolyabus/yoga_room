@@ -5,6 +5,7 @@ class YogaClassesController < ApplicationController
 
   def new
     @yoga_class = YogaClass.new
+    @location = Location.new
   end
 
   def create

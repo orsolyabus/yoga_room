@@ -13,10 +13,13 @@ class LocationsController < ApplicationController
 
   def create
     @location = Location.new location_params
-    if @location.save
-      redirect_to @location
-    else
-      render :new 
+    respond_to do |format|
+      if @location.save
+        @yoga_class = YogaClass.new
+        format.js
+      else
+        format.js {render :error}
+      end
     end
   end
 

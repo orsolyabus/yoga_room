@@ -30,6 +30,15 @@
           <li class="nav-item">
             <%= link_to("Classes", yoga_classes_path, class: "nav-link" )%>
           </li>
+          <li class="nav-item">
+            <%= link_to("Locations", locations_path, class: "nav-link" )%>
+          </li>
+
+          <% if can?(:crud, YogaClass) %>
+            <li class="nav-item">
+            <%= link_to("New Class", new_yoga_class_path, class: "nav-link" )%>
+          </li>
+          <% end %>
 
           <% if user_signed_in? %>
           
