@@ -7,6 +7,15 @@
   <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#newLocationForm">
     New Location
   </button>
+  <%= f.simple_fields_for :schedule do |schedule_form| %>
+			<%= schedule_form.input :class_type, as: :select, collection: ["regular", "course", "workshop"] , required: true%>
+      <%= schedule_form.input :start, hint: "" , wrapper_html: {class: ""} %>
+      <%= schedule_form.input :end , hint: "",  wrapper_html: {class: ""}  %>
+      <%= schedule_form.input :duration , hint: "the length of the class in minutes",  wrapper_html: {class: ""}  %>
+
+		
+	<% end %>
+
   <%= f. submit class: "btn btn-primary" %>
 
 <% end %>

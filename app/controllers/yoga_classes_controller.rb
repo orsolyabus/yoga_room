@@ -6,13 +6,20 @@ class YogaClassesController < ApplicationController
   def new
     @yoga_class = YogaClass.new
     @location = Location.new
+    @yoga_class.build_schedule
   end
 
   def create
     @yoga_class = YogaClass.new yoga_class_params
     @yoga_class.user = current_user
-    @yoga_class.location = Location.find params[:yoga_class][:location_id]
-    if @yoga_class.save
+
+    @location = Location.find_or_initialize_by(id: params[:yoga_class][:location_id])
+    @yoga_class.location = @location
+
+    @schedule = Schedule.new(yoga_class_params[:schedule_attributes])
+    @yoga_class.schedule = @schedule
+
+    if  (@yoga_class.save && @schedule.save)
       redirect_to @yoga_class
     else
       render :new
@@ -49,7 +56,7 @@ class YogaClassesController < ApplicationController
   end
 
   def yoga_class_params
-    params.require(:yoga_class).permit(:title, :description, :location )
+    params.require(:yoga_class).permit(:title, :description, :location, schedule_attributes: [:start, :end, :duration, :class_type] )
   end
 
   def authorize_user!

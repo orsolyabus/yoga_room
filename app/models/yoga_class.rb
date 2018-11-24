@@ -1,7 +1,10 @@
 class YogaClass < ApplicationRecord
-  validates :title, :description, presence: true
-  belongs_to :location
-  # belongs_to :time_slot
+  validates :title, :description,   presence: true
   belongs_to :user
-  # style, class_type ? add once the previous is done
+  belongs_to :location
+  
+  has_one :schedule
+
+  accepts_nested_attributes_for :schedule
+  # style,? add once the previous is done
 end

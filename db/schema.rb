@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_23_025851) do
+ActiveRecord::Schema.define(version: 2018_11_24_012434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,6 +66,8 @@ ActiveRecord::Schema.define(version: 2018_11_23_025851) do
     t.integer "class_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "yoga_class_id"
+    t.index ["yoga_class_id"], name: "index_schedules_on_yoga_class_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -90,6 +92,7 @@ ActiveRecord::Schema.define(version: 2018_11_23_025851) do
   end
 
   add_foreign_key "infos", "users"
+  add_foreign_key "schedules", "yoga_classes"
   add_foreign_key "yoga_classes", "locations"
   add_foreign_key "yoga_classes", "users"
 end
