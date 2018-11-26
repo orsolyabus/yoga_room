@@ -14,6 +14,7 @@
 - [x] schedule crud
 - [x] update seeds
 - [ ] schedule views
+- [ ] yoga class  + schedule validations
 - [ ] search view
 - [ ] search engine 
 - [ ] notifications

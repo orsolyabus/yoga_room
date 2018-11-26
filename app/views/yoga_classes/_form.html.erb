@@ -8,10 +8,13 @@
     New Location
   </button>
   <%= f.simple_fields_for :schedule do |schedule_form| %>
-			<%= schedule_form.input :class_type, as: :select, collection: ["regular", "course", "workshop"] , required: true%>
-      <%= schedule_form.input :start, hint: "" , wrapper_html: {class: ""} %>
-      <%= schedule_form.input :end , hint: "",  wrapper_html: {class: ""}  %>
-      <%= schedule_form.input :duration , hint: "the length of the class in minutes",  wrapper_html: {class: ""}  %>
+      <%= schedule_form.input :class_type,
+       as: :select, collection: ["regular", "course", "workshop"] , 
+       required: true , 
+       hint: "Regular class : weekly repeating classes, Course : fix set of weekly classes eg.: 6 weeks, Workshop : one time occasion" %>
+      <%= schedule_form.input :start, hint: "" , wrapper_html: {class: "hidden"} , required: true %>
+      <%= schedule_form.input :end , hint: "",  wrapper_html: {class: "hidden"} , required: true %>
+      <%= schedule_form.input :duration , hint: "The length of one class in minutes",  wrapper_html: {class: "hidden"} , required: true %>
 
 		
 	<% end %>
