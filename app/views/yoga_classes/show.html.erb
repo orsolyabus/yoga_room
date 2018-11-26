@@ -1,2 +1,6 @@
 <h1><%= @yoga_class.title %></h1>
+<h3>teacher: <%= @yoga_class.user.name %></h3>
 <p><%= @yoga_class.description %></p>
+<p>location: <%= @yoga_class.location.location_list_view %></p>
+<p>class type: <%= @yoga_class.schedule.class_type %></p>
+<p><%= @yoga_class.schedule.start %></p>

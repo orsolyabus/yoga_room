@@ -42,6 +42,7 @@ class YogaClassesController < ApplicationController
   end
 
   def edit
+    @location = @yoga_class.location
   end
 
   def destroy
