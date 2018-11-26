@@ -11,8 +11,8 @@
 - [x] location crud
 - [~] location views
 - [x] schedule model
-- [ ] schedule crud
-- [ ] update seeds
+- [x] schedule crud
+- [x] update seeds
 - [ ] schedule views
 - [ ] search view
 - [ ] search engine 
