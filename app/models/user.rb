@@ -7,6 +7,6 @@ class User < ApplicationRecord
 
   has_one :info, dependent: :destroy
   has_secure_password
-  has_many :yoga_classes: dependent: :destroy
+  has_many :yoga_classes, dependent: :destroy
 
 end

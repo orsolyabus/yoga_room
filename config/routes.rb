@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :locations
   resources :yoga_classes
  
-  root 'users#index'
+  root 'home#index'
 
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
