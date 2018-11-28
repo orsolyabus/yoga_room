@@ -91,4 +91,4 @@ classtypes = ["regular", "course", "workshop"]
 
 end
 
-puts "seeding done"
+puts "seeding done"AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
