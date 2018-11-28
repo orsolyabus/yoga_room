@@ -1,0 +1,91 @@
+<%= simple_form_for @yoga_class do |f| %>
+  <% @form = f %>
+  <%= f.input :title %>
+  <%= f.input :description %>
+  <%= render "location" %>
+
+  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#newLocationForm">
+    New Location
+  </button>
+  <%= f.simple_fields_for :schedule do |schedule_form| %>
+      <%= schedule_form.input :class_type,
+       as: :select, collection: ["regular", "course", "workshop"] , 
+       required: true , 
+       hint: "Regular class : weekly repeating classes, Course : fix set of weekly classes eg.: 6 weeks, Workshop : one time occasion" %>
+      <%= schedule_form.input :start, hint: "" , wrapper_html: {class: "hidden"} , required: true %>
+      <%= schedule_form.input :end , hint: "",  wrapper_html: {class: "hidden"} , required: true %>
+      <%= schedule_form.input :duration , hint: "The length of one class in minutes",  wrapper_html: {class: "hidden"} , required: true %>
+
+		
+	<% end %>
+
+  <%= f. submit class: "btn btn-primary" %>
+
+<% end %>
+
+<div class="modal fade" id="newLocationForm" tabindex="-1" role="dialog" aria-labelledby="newLocationFormLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="newLocationFormLabel">New Location</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="X">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="location-form">
+          <%= render "locations/form" %>
+        </div>       
+     
+        <button type="button" class="btn mt-2" data-dismiss="modal">Cancel</button>
+         
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  const showCorrespondingFields=(classType)=>{
+    if (classType == "regular") {
+      start = document.querySelector(".yoga_class_schedule_start")
+      start.classList.remove("hidden")
+      start.querySelector("small").innerText = "Date and time for the first yoga class"  
+          
+      document.querySelector(".yoga_class_schedule_duration").classList.remove("hidden")
+
+      end = document.querySelector(".yoga_class_schedule_end")
+      end.classList.add("hidden")
+
+    } else if (classType == "course") {
+      start = document.querySelector(".yoga_class_schedule_start")
+      start.classList.remove("hidden")
+      start.querySelector("small").innerText = "Date and time for the first yoga class" 
+
+      document.querySelector(".yoga_class_schedule_duration").classList.remove("hidden")
+
+      end = document.querySelector(".yoga_class_schedule_end")
+      end.classList.remove("hidden")
+      end.querySelector("small").innerText = "Date and time for the last yoga class" 
+      
+    } else if (classType == "workshop") {
+      start = document.querySelector(".yoga_class_schedule_start")
+      start.classList.remove("hidden")
+      start.querySelector("small").innerText = "Date and time for the start of the workshop" 
+
+      end = document.querySelector(".yoga_class_schedule_end")
+      end.classList.remove("hidden")
+      end.querySelector("small").innerText = "Date and time for the end of the workshop" 
+
+      document.querySelector(".yoga_class_schedule_duration").classList.add("hidden")
+    } 
+  }
+
+  const classTypeSelect = document.querySelector("#yoga_class_schedule_attributes_class_type")
+  showCorrespondingFields(classTypeSelect.value)
+  
+  classTypeSelect.addEventListener("change", (event) => {
+    const classType = event.currentTarget.value;
+    showCorrespondingFields(classType)
+    
+  })
+</script>

@@ -14,6 +14,15 @@
 
  @import "bootstrap";
 
+
+ .simple_form abbr {
+  text-decoration: none;
+} 
+
+.hidden {
+  display: none;
+
  #main-index {
   max-width: 1200px;
+
 }

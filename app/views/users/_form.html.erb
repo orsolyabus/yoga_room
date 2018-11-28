@@ -1,0 +1,17 @@
+<%= simple_form_for(@user) do |f| %>
+
+  <%= f.input :name, label: "full name"%>
+  <%= f.input :email %>
+  <%= f.input :is_teacher, as: :radio_buttons, label: "Are you a teacher?"%>
+  <%= f.input :password %>
+  <%= f.input :password_confirmation %>
+
+  <%= f.submit class: "btn btn-outline-primary"%>
+  
+<% end %>
+
+<% if @user.persisted? %>
+<div>
+<%= link_to 'Delete account', user_path(@user), method: :delete, data: { confirm: 'Are you certain?' }, class: "btn btn-outline-danger mt-3" %>
+</div>
+<% end %>

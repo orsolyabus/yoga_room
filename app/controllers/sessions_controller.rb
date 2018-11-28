@@ -4,19 +4,26 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @teacher = Teacher.find_by_email(params[:email])
-    if @teacher && @teacher.authenticate(params[:password])
-      session[:teacher_id] = @teacher.id
-      redirect_to teacher_path(@teacher), notice: 'Signed in!'
+
+    user = User.find_by_email params[:email]
+    if user && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      user.last_login = Time.now
+      user.save
+      flash[:success] = "Signed in!"
+      redirect_to user
     else
-      flash.now[:alert] = 'Wrong credentials!'
+      flash.now[:danger] = 'Wrong credentials!'
+
       render :new
     end
   end
 
   def destroy
-    session[:teacher_id] = nil
-    redirect_to root_path, notice: 'Signed out!'
-  end 
+    session[:user_id] = nil
+
+    flash[:success] = "Signed out!"
+    redirect_to users_path
+  end
 
 end

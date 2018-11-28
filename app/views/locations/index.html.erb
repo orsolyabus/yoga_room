@@ -1,0 +1,12 @@
+<h1>Locations</h1>
+<ul>
+  <% @locations.each do |l| %>
+    <li>
+      <%= l.studio %>
+      <%= l.address %>
+      <%= l.city %>
+      <%= l.state %>
+      <%= l.country %>
+    </li>
+  <% end %>
+</ul>

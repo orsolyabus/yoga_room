@@ -1,11 +1,26 @@
-- [x] 1. setup
-- [x] 2. Teacher user model
-- [x] 3. teacher crud
-- [x] 4. techer views
-- [ ] 5. login / sessions
-- [ ] 6. class model
-- [ ] 7. class crud
-- [ ] 8. class views
-- [ ] 9. search view
-- [ ] 10. search engine
-- [ ] 11. i18n
+- [x] setup
+- [x] Teacher user model
+- [x] teacher crud
+- [x] techer views
+- [x] login / sessions
+- [x] teacher info
+- [x] class model
+- [x] class crud
+- [x] class views
+- [x] location model
+- [x] location crud
+- [~] location views
+- [x] schedule model
+- [x] schedule crud
+- [x] update seeds
+- [X] schedule views
+- [x] yoga class  + schedule validations
+- [ ] search view
+- [ ] search engine 
+- [ ] notifications
+- [ ] background jobs
+- [ ] front end design
+  
+- [ ] elastic search
+- [ ] i18n
+- [ ] class sing up

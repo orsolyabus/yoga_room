@@ -1,0 +1,8 @@
+<h1>Yoga Classes</h1>
+<ul>
+  <% @yoga_classes.each do |yc| %>
+    <li>
+      <%= link_to(yc.title, yoga_class_path(yc) )%>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,63 @@
+<div class="container-fluid">
+  <h1><%= @user.name%></h1>
+  <div class="row">
+    <div class="col-md-8">
+    
+      <div class="card bg-light mb-4" >
+        <div class="card-body">
+          <div class="row">
+           
+            <div class="col-sm-6">
+              <%= image_tag @user.info.image.variant(resize: '300X300') if @user.info.image.attached? %>
+            </div>
+             
+            <div class="col-sm">
+              <h5 class="card-title"><%= @user.name%></h5>
+              <p class="card-text">webpage: <%= @user.info.webpage %></p>
+              
+              <p class="card-text">phone: <%= @user.info.phone %></p>
+              <p class="card-text"><%= @user.email%></p>
+              
+              <%if can?(:crud, @user)%>
+              <%= link_to 'Edit account', edit_user_path(@user) , class: "btn btn-outline-primary"%>
+             
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card bg-light mb-4" id="add_a_class" >       
+        <div class="card-body">
+          <h5 class="card-title">Introduction</h5>
+          <p class="card-text"><%= @user.info.introduction %></p>
+          <% if can? :crud, @info%>
+            <% if @info.persisted? %>
+              <%= link_to "edit profile", edit_user_info_path(@user, @info), class: "btn btn-primary"%>
+            <% else %>
+              <%= link_to "create profile", new_user_info_path(@user), class: "btn btn-primary"%>   
+            <% end %> 
+          <% end %>   
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md">
+      <% if current_user == @user %>                  
+        <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
+      <% end %>
+      <% @user.yoga_classes.each do |yc| %>
+
+        <div class="card bg-light mb-4" >       
+          <div class="card-body">
+            <h5 class="card-title"><a><%= yc.title %></a></h5>
+            <p class="card-text">location</p>
+            <p class="card-text">time</p>        
+          </div>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+</div>
