@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <p>teacher info</p>
+      <%= @teacher.spiritual_name%>
+      <br>
+      <%= @teacher.introduction%>
+    </div>
+    <div class="col-sm">
+      <% @classes.each do |cl| %>
+      <div class="card bg-light" >
+        <img class="card-img-top" src= <%= cl.image_url%> >
+        <div class="card-body">
+          <h5 class="card-title"><%= cl.title%> </h5>
+          <p class="card-text"><%= cl.location%></p>
+          <p class="card-text"><%= cl.time%></p>
+          <p class="card-text"><%= cl.description&.slice(0, 200)%></p>
+          <a href="<%=teacher_path(t)%>" class="btn btn-outline-info">to teacher's page</a>
+        </div>
+      </div>
+    <% end %>
+    </div>
+  </div>
+</div>
