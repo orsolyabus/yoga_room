@@ -4,7 +4,9 @@ class HomeController < ApplicationController
   end
 
   def search
-    @search_params = params
+    @params = params
+    @search_params = helpers.get_search_params(params)
+    @search_result = helpers.search(@search_params)
   end
 
   private

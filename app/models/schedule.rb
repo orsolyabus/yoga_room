@@ -6,7 +6,7 @@ class Schedule < ApplicationRecord
   validates :start, presence: true  
   validates :duration, numericality: true, if: :duration_needed?
   validates :end, presence: true, if: :end_needed?
-  validate :end_is_grater_than_start
+  validate :end_is_grater_than_start, if: :end_needed?
   validate :start_must_be_future
   # regular classes: start, duration
   # course : start end duration

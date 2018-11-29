@@ -1,18 +1,22 @@
-<%= simple_form_for "", url: search_path do |f| %>
+<%= simple_form_for "", url: search_path, method: :get do |f| %>
   <%= f.input :keyword %>
-  <%= f.input :teacher %>
-  <%= f.input :class_type %>
-  <%= f.input :day_of_week %>
-  <%= f.input :time_after %>
-  <%= f.input :time_before %>
-  <%= f.input :duration %>
-  <%= f.input :city %>
-  <%= f.input :country %>
-  <%= f.input :state %>
-  <%= f.input :studio %>
-  <%= f.input :day_after %>
-  <%= f.input :day_before %>
+  <%= f.input :class_type , as: :select, collection: ["regular", "course", "workshop"] %>
+  <%= f.input :day_of_week, 
+              as: :check_boxes, 
+              collection: [['Sunday','0'], ['Monday','1'], ['Tuesday','2'], ['Wednesday','3'], ['Thursday','4'], ['Friday','5'], ['Saturday','6']]
+              %>
+  
+  <%= f.input :city %><%# dropdown %>
+  <%= f.input :teacher %>  
+  <%= f.input :country %><%# dropdown %>
+  <%= f.input :state %> <%# dropdown %>
+  <%= f.input :studio %><%# dropdown %>
+  <%= f.input :day_after, as: :date, html5: true %>
+  <%= f.input :day_before , as: :date, html5: true %> 
+ 
 
-
-  <%= f.submit "Search", class: "btn btn-outline-primary" %>
+  <%= f.submit "Search", class: "btn btn-primary" %>
 <% end %>
+
+
+<%# furure features if needed: search based on time of day, duration %>

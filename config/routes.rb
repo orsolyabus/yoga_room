@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   resources :locations
   resources :yoga_classes
 
-  post "/search", to: "home#search", as: :search
+  get "/search", to: "home#search", as: :search
   root 'home#index'
 
   namespace :api, defaults: { format: :json } do

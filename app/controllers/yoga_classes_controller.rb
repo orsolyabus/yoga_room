@@ -57,7 +57,7 @@ class YogaClassesController < ApplicationController
   end
 
   def yoga_class_params
-    params.require(:yoga_class).permit(:title, :description, :location, schedule_attributes: [:start, :end, :duration, :class_type] )
+    params.require(:yoga_class).permit(:title, :description, :location, schedule_attributes: [:start, :end, :duration, :class_type, :id] )
   end
 
   def authorize_user!
