@@ -9,7 +9,7 @@ module HomeHelper
 
     query = YogaClass.all
 
-    if params[:keyword]
+    if params[:keyword] # add multiple words search
       search = "%#{params[:keyword]}%"
       query = query.where("title ILIKE ? OR description ILIKE ? ", search, search)  
     end

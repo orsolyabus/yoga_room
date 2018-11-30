@@ -2,49 +2,28 @@
   <%= f.input :keyword , required: false %>
   <%= f.input :class_type , as: :select, collection: ["regular", "course", "workshop"] , required: false %>
 
-  <fieldset class="form-group check_boxes">
-    <legend class="col-form-label pt-0">Day of the week</legend>
-    <div class="form-check form-check-inline">
-      <input type="checkbox" class="form-check-input" value="0" name="day_of_week[]" id="day_of_week_0">
-      <label for="day_of_week_0" class="form-check-label">Sunday</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input type="checkbox" class="form-check-input" value="1" name="day_of_week[]" id="day_of_week_1">
-      <label for="day_of_week_1" class="form-check-label">Monday</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input type="checkbox" class="form-check-input" value="2" name="day_of_week[]" id="day_of_week_2">
-      <label for="day_of_week_2" class="form-check-label">Tuesday</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input type="checkbox" class="form-check-input" value="3" name="day_of_week[]" id="day_of_week_3">
-      <label for="day_of_week_3" class="form-check-label">Wednesday</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input type="checkbox" class="form-check-input" value="4" name="day_of_week[]" id="day_of_week_4">
-      <label for="day_of_week_4" class="form-check-label">Thursday</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input type="checkbox" class="form-check-input" value="5" name="day_of_week[]" id="day_of_week_5">
-      <label for="day_of_week_5" class="form-check-label">Friday</label>
-    </div>
-    <div class="form-check form-check-inline">
-      <input type="checkbox" class="form-check-input" value="6" name="day_of_week[]" id="day_of_week_6">
-      <label for="day_of_week_6" class="form-check-label">Saturday</label>
-    </div>
-  </fieldset>
+  <%= render "day_of_week_field" %>
+
+  <div class="row">
+    <%= f.input :day_after, as: :date, html5: true, required: false, wrapper_html: {class: "col"} %>
+    <%= f.input :day_before , as: :date, html5: true, required: false , wrapper_html: {class: "col"}%> 
+  </div>
   
-  <%= f.input :city, required: false  %><%# dropdown %>
-  <%= f.input :teacher, required: false  %>  
-  <%= f.input :country, required: false  %><%# dropdown %>
-  <%= f.input :state, required: false  %> <%# dropdown %>
-  <%= f.input :studio, required: false  %><%# dropdown %>
-  <%= f.input :day_after, as: :date, html5: true, required: false  %>
-  <%= f.input :day_before , as: :date, html5: true, required: false  %> 
+  <%= f.input :teacher, required: false  %> 
+
+  <div class="row">
+    <%= f.input :studio, required: false , wrapper_html: {class: "col"} %>
+    <%= f.input :city, required: false , wrapper_html: {class: "col"} %><%# dropdown %>
+  </div>
+  
+  <div class="row">
+    <%= f.input :country, required: false , wrapper_html: {class: "col"} %><%# dropdown %>
+    <%= f.input :state, required: false , wrapper_html: {class: "col"} %> <%# dropdown %>
+  </div>
+  
  
 
   <%= f.submit "Search", class: "btn btn-primary" %>
 <% end %>
-
 
 <%# furure features if needed: search based on time of day, duration %>

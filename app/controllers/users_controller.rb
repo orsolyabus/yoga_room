@@ -9,6 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @yoga_classes = YogaClass.includes(:location, :schedule).where(user_id: params[:id])
     @info = @user.info || Info.new(user: @user)
   end
 

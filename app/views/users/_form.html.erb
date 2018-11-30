@@ -6,12 +6,12 @@
   <%= f.input :password %>
   <%= f.input :password_confirmation %>
 
-  <%= f.submit class: "btn btn-outline-primary"%>
+  <%= f.submit class: "btn btn-primary"%>
   
 <% end %>
 
 <% if @user.persisted? %>
 <div>
-<%= link_to 'Delete account', user_path(@user), method: :delete, data: { confirm: 'Are you certain?' }, class: "btn btn-outline-danger mt-3" %>
+<%= link_to 'Delete account', user_path(@user), method: :delete, data: { confirm: 'Are you certain?' }, class: "btn btn-danger mt-3" %>
 </div>
 <% end %>

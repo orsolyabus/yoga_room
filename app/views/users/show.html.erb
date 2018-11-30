@@ -1,5 +1,4 @@
-<div class="container-fluid">
-  <h1><%= @user.name%></h1>
+  <h2><%= @user.name%></h2>
   <div class="row">
     <div class="col-md-8">
     
@@ -8,14 +7,14 @@
           <div class="row">
            
             <div class="col-sm-6">
-              <%= image_tag @user.info.image.variant(resize: '300X300') if @user.info.image.attached? %>
+              <%= image_tag @info.image.variant(resize: '300X300') if @info.image.attached? %>
             </div>
              
             <div class="col-sm">
-              <h5 class="card-title"><%= @user.name%></h5>
-              <p class="card-text">webpage: <%= @user.info.webpage %></p>
+              <h5 class="card-title"><%= @user.name%> <%= @info.spiritual_name %></h5>
+              <p class="card-text">webpage: <%= @info.webpage %></p>
               
-              <p class="card-text">phone: <%= @user.info.phone %></p>
+              <p class="card-text">phone: <%= @info.phone %></p>
               <p class="card-text"><%= @user.email%></p>
               
               <%if can?(:crud, @user)%>
@@ -30,7 +29,7 @@
       <div class="card bg-light mb-4" id="add_a_class" >       
         <div class="card-body">
           <h5 class="card-title">Introduction</h5>
-          <p class="card-text"><%= @user.info.introduction %></p>
+          <p class="card-text"><%= @info.introduction %></p>
           <% if can? :crud, @info%>
             <% if @info.persisted? %>
               <%= link_to "edit profile", edit_user_info_path(@user, @info), class: "btn btn-primary"%>
@@ -47,13 +46,13 @@
       <% if current_user == @user %>                  
         <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
       <% end %>
-      <% @user.yoga_classes.each do |yc| %>
+      <% @yoga_classes.each do |yc| %>
 
         <div class="card bg-light mb-4" >       
           <div class="card-body">
             <h5 class="card-title"><a><%= yc.title %></a></h5>
-            <p class="card-text">location</p>
-            <p class="card-text">time</p>        
+            <p class="card-text">location: <%= yc.location.studio %>, <%= yc.location.address %> <%= yc.location.city %></p>
+            <p class="card-text"><%= yc.schedule.class_type%></p>        
           </div>
         </div>
       <% end %>
