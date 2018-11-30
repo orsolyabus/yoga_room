@@ -26,7 +26,7 @@ module HomeHelper
     end
 
     if params[:day_of_week]
-      search = params[:day_of_week]#.drop(1).map {|d| d.to_i }
+      search = params[:day_of_week]
       schedule = Schedule.where('EXTRACT(dow FROM start) IN (?)', search)
       query = query.where(schedule: schedule)
     end

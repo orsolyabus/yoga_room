@@ -1,12 +1,15 @@
-<div class="container-fluid" id="main-index">
-  <h2>Our Teachers</h2>
+<div class="container-fluid" id="main-teachers">
+  <h2>Teachers</h2>
 
-  <div class="card-columns p-2 ">
+  <div class="row ">
     <% @users.each do |user| %>
-      <div class="card bg-light" >
-        <div class="card-body">
-          <h5 class="card-title"><%= user.name%></h5>
-          <%= link_to 'Show', user_path(user) %>
+      <div class="col-md-6 col-lg-4" >
+         <div class="card bg-light my-2"  > 
+          <div class="card-body">
+            <h5 class="card-title"><%= user.name%> - <%= user.info.spiritual_name %></h5>
+            <p><%= user.yoga_classes.count %> classes</p>
+            <%= link_to 'Show', user_path(user) %>
+          </div>
         </div>
       </div>
     <% end %>

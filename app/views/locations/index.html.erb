@@ -1,12 +1,24 @@
-<h1>Locations</h1>
-<ul>
-  <% @locations.each do |l| %>
-    <li>
-      <%= l.studio %>
-      <%= l.address %>
-      <%= l.city %>
-      <%= l.state %>
-      <%= l.country %>
-    </li>
-  <% end %>
-</ul>
+<div class="container-fluid" id="main-locations">
+  <h2>Locations</h2>
+
+  <div class="row ">
+
+    <% @locations.each do |location| %>
+      <div class="col-md-6 col-lg-4" >
+        <div class="card bg-light my-2" style="height: 170px" >
+          <div class="card-body">
+            <h5 class="card-title"><%= location.studio %> </h5>
+            <p>
+              <%= location.address %>
+              <%= location.city %><br>
+              <%= location.state %>
+              <%= location.country %>
+            </p>
+            <%= link_to 'Show', location_path(location) %>
+          </div>
+        </div>
+      </div>
+    <% end %>
+
+  </div>
+</div>

@@ -1,17 +1,17 @@
 <div class="text-center">
-  <h1>Welcone to Kundalini Yoga Community!</h1>
+  <h1>Welcone to the Yoga Room!</h1>
 </div>
 
 
 
 <div class="row">
-  <div class="col-lg-8">
-    <h2>Search here for the yoga class of your choice</h2>
-    <%= render "search_form" %>
+  <div class="col">
+    <h3>Search here for the yoga class of your choice</h3>
+    <%= link_to("Search classes", yoga_classes_path, class: "btn btn-primary")%>
   </div>
   <div class="col">
-    <h2>Are you a teacher?</h2>
-    <h3>Sign up and add your classes!</h3>
+    <h3>Are you a teacher?</h3>
+    <h5>Sign up and add your classes!</h5>
     <%= link_to("Sign Up", new_user_path, class: "btn btn-primary")%>
     <%= link_to("Log in", new_sessions_path, class: "btn btn-secondary")%>
 
