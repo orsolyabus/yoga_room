@@ -1,7 +1,7 @@
 - [x] setup
 - [x] Teacher user model
 - [x] teacher crud
-- [x] techer views
+- [x] teacher views
 - [x] login / sessions
 - [x] teacher info
 - [x] class model
@@ -9,17 +9,25 @@
 - [x] class views
 - [x] location model
 - [x] location crud
-- [~] location views
+- [x] location views
 - [x] schedule model
 - [x] schedule crud
 - [x] update seeds
 - [X] schedule views
 - [x] yoga class  + schedule validations
-- [ ] search view
-- [ ] search engine 
+- [x] search view
+- [x] search engine 
+- [ ] dynamic search result display
 - [ ] notifications
 - [ ] background jobs
 - [ ] front end design
+- [ ] news feed of newest yoga classes on landing page
+- [ ] comment section on classes
+- [ ] ask the teacher messaging
+
+- [ ] searchable locations 
+- [ ] add minimap to location show
+- [ ] add classes to location show
   
 - [ ] elastic search
 - [ ] i18n

@@ -9,9 +9,10 @@ Rails.application.routes.draw do
   resource :sessions, only: [:new, :create, :destroy]
   
   resources :locations
-  resources :yoga_classes
 
-  get "/search", to: "home#search", as: :search
+  get "/yoga_classes/search", to: "yoga_classes#search", as: :yoga_class_search
+  resources :yoga_classes
+  
   root 'home#index'
 
   namespace :api, defaults: { format: :json } do

@@ -1,5 +1,6 @@
   <h2>Yoga Classes</h2>
   <div class="row">
+
     <div class="col-md mb-4">
       <div class="card">
         <div class="card-body">
@@ -11,7 +12,11 @@
     <div class="col-md">
       <div class="card">
         <div class="card-body" id="search-results">
-          search reluts go here
+          <% @yoga_classes.each do |yc| %>
+            <li>
+              <%= link_to(yc.title, yoga_class_path(yc) )%>
+            </li>
+          <% end %>
         </div>
       </div>
     </div>

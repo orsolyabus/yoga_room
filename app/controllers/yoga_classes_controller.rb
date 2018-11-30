@@ -50,6 +50,15 @@ class YogaClassesController < ApplicationController
     render :index
   end
 
+  def search
+    @params = params
+    @search_params = helpers.get_search_params(@params)
+    @yoga_classes = helpers.search(@search_params)
+    respond_to do |format|
+      format.js
+    end
+  end
+
   private
 
   def find_yoga_class
