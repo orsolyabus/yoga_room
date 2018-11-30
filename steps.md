@@ -17,14 +17,15 @@
 - [x] yoga class  + schedule validations
 - [x] search view
 - [x] search engine 
-- [ ] dynamic search result display
+- [x] dynamic search result display
 - [ ] notifications
 - [ ] background jobs
 - [ ] front end design
 - [ ] news feed of newest yoga classes on landing page
-- [ ] comment section on classes
+
 - [ ] ask the teacher messaging
 
+- [ ] comment section on classes
 - [ ] searchable locations 
 - [ ] add minimap to location show
 - [ ] add classes to location show
