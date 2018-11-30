@@ -5,10 +5,11 @@ class UsersController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.all
+    @users = User.includes(:info).includes(:yoga_classes).where(is_teacher: true)
   end
 
   def show
+    @yoga_classes = YogaClass.includes(:location, :schedule).where(user_id: params[:id])
     @info = @user.info || Info.new(user: @user)
   end
 

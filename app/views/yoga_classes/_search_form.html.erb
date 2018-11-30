@@ -1,0 +1,28 @@
+<%= simple_form_for "", url: yoga_class_search_path, method: :get, remote: true do |f| %>
+  <%= f.input :keyword , required: false %>
+  <div class="row">
+    <%= f.input :class_type , as: :select, collection: ["regular", "course", "workshop"] , required: false, wrapper_html: {class: "col"} %>
+    <%= f.input :teacher, required: false, wrapper_html: {class: "col"}  %> 
+  </div>
+
+  <%= render "day_of_week_field" %>
+
+  <div class="row">
+    <%= f.input :day_after, as: :date, html5: true, required: false, wrapper_html: {class: "col"} %>
+    <%= f.input :day_before , as: :date, html5: true, required: false , wrapper_html: {class: "col"}%> 
+  </div>
+  
+  <div class="row">
+    <%= f.input :studio, required: false , wrapper_html: {class: "col"} %>
+    <%= f.input :city, required: false , wrapper_html: {class: "col"} %><%# dropdown %>
+  </div>
+  
+  <div class="row">
+    <%= f.input :country, required: false , wrapper_html: {class: "col"} %><%# dropdown %>
+    <%= f.input :state, required: false , wrapper_html: {class: "col"} %> <%# dropdown %>
+  </div>
+  
+  <%= f.submit "Search", class: "btn btn-primary", id: "search_button" %>
+<% end %>
+
+<%# furure features if needed: search based on time of day, duration %>

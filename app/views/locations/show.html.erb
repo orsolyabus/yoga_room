@@ -1,2 +1,8 @@
-<h1>Locations#show</h1>
-<p>Find me in app/views/locations/show.html.erb</p>
+<h2><%= @location.studio %></h2>
+<div class="card">
+  <div class="card-body">
+    <p><%= @location.address %>, <%= @location.city %></p>
+    <p><%= @location.state ? "#{@location.state}, ": "" %><%= @location.country %></p>
+  </div>
+</div>
+

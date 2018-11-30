@@ -1,8 +1,24 @@
-<h1>Yoga Classes</h1>
-<ul>
-  <% @yoga_classes.each do |yc| %>
-    <li>
-      <%= link_to(yc.title, yoga_class_path(yc) )%>
-    </li>
-  <% end %>
-</ul>
+  <h2>Yoga Classes</h2>
+  <div class="row">
+
+    <div class="col-md mb-4">
+      <div class="card">
+        <div class="card-body">
+          <%= render "search_form" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md">
+      <div class="card">
+        <div class="card-body" id="search-results">
+          <% @yoga_classes.each do |yc| %>
+            <li>
+              <%= link_to(yc.title, yoga_class_path(yc) )%>
+            </li>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  </div>

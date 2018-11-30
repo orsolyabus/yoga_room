@@ -1,5 +1,5 @@
 class YogaClass < ApplicationRecord
-  validates :title, :description,   presence: true
+  validates :title, :description, presence: true
   belongs_to :user
   belongs_to :location
   
@@ -7,4 +7,9 @@ class YogaClass < ApplicationRecord
 
   accepts_nested_attributes_for :schedule
   # style,? add once the previous is done
+
+  include PgSearch
+
+  pg_search_scope :search_for, against: %i(title description)
+  pg_search_scope :search_content_for, against: :content, using: { tsearch: { any_word: true } }
 end
