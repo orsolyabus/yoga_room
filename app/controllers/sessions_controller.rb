@@ -4,6 +4,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+
     user = User.find_by_email params[:email]
     if user && user.authenticate(params[:password])
       session[:user_id] = user.id
@@ -13,6 +14,7 @@ class SessionsController < ApplicationController
       redirect_to user
     else
       flash.now[:danger] = 'Wrong credentials!'
+
       render :new
     end
   end

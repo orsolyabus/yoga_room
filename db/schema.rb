@@ -12,6 +12,7 @@
 
 ActiveRecord::Schema.define(version: 2018_11_27_235614) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -121,4 +122,5 @@ ActiveRecord::Schema.define(version: 2018_11_27_235614) do
   add_foreign_key "schedules", "yoga_classes"
   add_foreign_key "yoga_classes", "locations"
   add_foreign_key "yoga_classes", "users"
+
 end
