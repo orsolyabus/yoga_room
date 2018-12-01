@@ -1,3 +1,4 @@
 <% @yoga_classes.each do |yc| %>
-  <p><%= yc.title %></p>
+  <p><%= link_to(yc.title, yoga_class_path(yc))%></p>
+  
 <% end %>

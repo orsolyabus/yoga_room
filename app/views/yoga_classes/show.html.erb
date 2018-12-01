@@ -3,4 +3,4 @@
 <p><%= @yoga_class.description %></p>
 <p>location: <%= @yoga_class.location.location_list_view %></p>
 <p>class type: <%= @yoga_class.schedule.class_type %></p>
-<p><%= @yoga_class.schedule.start %></p>
+<p><%= @yoga_class.schedule.start&.in_time_zone %></p>
