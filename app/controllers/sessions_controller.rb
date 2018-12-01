@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
     session[:user_id] = nil
 
     flash[:success] = "Signed out!"
-    redirect_to users_path
+    redirect_to root_path
   end
 
 end

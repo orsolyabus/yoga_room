@@ -1,11 +1,12 @@
 
-<div class="jumbotron">
-  <h1 class="text-center">Welcome to the Yoga Room!</h1>
+
+<h1 class="text-center">Welcome to the Yoga Room!</h1>
+<div class="jumbotron" >
   <div class="row">
     <div class="col justify">
-      <img src="undraw_schedule_pnbk.png" alt="image" class="img-fluid">
+     <p>Looking for a yoga class? </p>
       
-      <%= link_to("Search classes", yoga_classes_path, class: "btn btn-primary")%>
+      <%= link_to("Search here", yoga_classes_path, class: "btn btn-primary")%>
     </div>
     <div class="col">
       <h3>Are you a teacher?</h3>
@@ -13,5 +14,6 @@
       <%= link_to("Sign Up", new_user_path, class: "btn btn-primary")%>
       <%= link_to("Log in", new_sessions_path, class: "btn btn-secondary")%>
     </div>
+     <img src="mindfulness_scgo.png" alt="image" class="img-fluid" >
   </div>
 </div>
