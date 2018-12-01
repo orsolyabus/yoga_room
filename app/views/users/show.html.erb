@@ -1,4 +1,16 @@
-  <h2><%= @user.name%></h2>
+  <div class="d-flex justify-content-between">
+    <div>
+      <h2 style="display: inline-block"><%= @user.name%></h2>
+    </div>
+    <div>
+      <%if can?(:crud, @user)%>
+        <%= link_to 'Edit account', edit_user_path(@user) , class: "btn btn-primary"%>
+      <% end %>
+    </div>
+    
+  </div>
+  
+  
   <div class="row">
     <div class="col-md-8">
     
@@ -12,15 +24,11 @@
              
             <div class="col-sm">
               <h5 class="card-title"><%= @user.name%> <%= @info.spiritual_name %></h5>
-              <p class="card-text">webpage: <%= @info.webpage %></p>
+              <p class="card-text"><%= @info.webpage ? "webpage: #{@info.webpage}" : "" %></p>
               
-              <p class="card-text">phone: <%= @info.phone %></p>
+              <p class="card-text"><%= @info.phone ? "phone: #{@info.phone}" : "" %></p>
               <p class="card-text"><%= @user.email%></p>
-              
-              <%if can?(:crud, @user)%>
-              <%= link_to 'Edit account', edit_user_path(@user) , class: "btn btn-outline-primary"%>
-             
-              <% end %>
+
             </div>
           </div>
         </div>
@@ -43,7 +51,7 @@
     </div>
 
     <div class="col-md">
-      <% if current_user == @user %>                  
+      <% if ( current_user == @user && current_user.is_teacher == true )%>                  
         <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
       <% end %>
       <% @yoga_classes.each do |yc| %>

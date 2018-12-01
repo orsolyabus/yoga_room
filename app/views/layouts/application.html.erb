@@ -36,7 +36,7 @@
             <%= link_to("Locations", locations_path, class: "nav-link" )%>
           </li>
 
-          <% if can?(:crud, YogaClass) %>
+          <% if (current_user && can?(:crud, YogaClass.new)) %>
             <li class="nav-item">
             <%= link_to("New Class", new_yoga_class_path, class: "nav-link" )%>
           </li>

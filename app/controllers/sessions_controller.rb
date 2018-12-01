@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       user.last_login = Time.now
       user.save
       flash[:success] = "Signed in!"
-      redirect_to user
+      redirect_to yoga_classes_path
     else
       flash.now[:danger] = 'Wrong credentials!'
 

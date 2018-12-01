@@ -20,7 +20,7 @@ class Ability
     end
 
     can(:crud, YogaClass) do |yc|
-      user.is_teacher && user == yc.user
+      user.is_teacher == true && (yc.persisted? ? user == yc.user : true)
     end
 
     can(:crud, Location) do |l|

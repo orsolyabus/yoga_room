@@ -21,6 +21,8 @@
 - [ ] notifications
 - [ ] background jobs
 - [ ] front end design
+
+- [ ] request a class
 - [ ] news feed of newest yoga classes on landing page
 
 - [ ] ask the teacher messaging

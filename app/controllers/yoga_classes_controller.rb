@@ -70,7 +70,13 @@ class YogaClassesController < ApplicationController
   end
 
   def authorize_user!
-    flash[:warning] = "you have to be a teacher to do that" unless can? :crud, YogaClass
+    p "###################"
+    puts " authorisation running"
+    p "###################"
+    unless can?(:crud, YogaClass.new )
+      flash[:warning] = "you have to be a teacher to do that" 
+      redirect_to yoga_classes_path
+    end
   end
 
 end
