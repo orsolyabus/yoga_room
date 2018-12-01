@@ -10,8 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_27_235614) do
-
+ActiveRecord::Schema.define(version: 2018_12_01_205438) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -86,14 +85,23 @@ ActiveRecord::Schema.define(version: 2018_11_27_235614) do
     t.string "state"
   end
 
+  create_table "saved_searches", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "name"
+    t.json "params"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_saved_searches_on_user_id"
+  end
+
   create_table "schedules", force: :cascade do |t|
     t.integer "duration"
-    t.datetime "start"
     t.datetime "end"
     t.integer "class_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "yoga_class_id"
+    t.datetime "start"
     t.index ["yoga_class_id"], name: "index_schedules_on_yoga_class_id"
   end
 
@@ -119,8 +127,8 @@ ActiveRecord::Schema.define(version: 2018_11_27_235614) do
   end
 
   add_foreign_key "infos", "users"
+  add_foreign_key "saved_searches", "users"
   add_foreign_key "schedules", "yoga_classes"
   add_foreign_key "yoga_classes", "locations"
   add_foreign_key "yoga_classes", "users"
-
 end
