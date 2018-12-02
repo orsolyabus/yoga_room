@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def show
     @yoga_classes = YogaClass.includes(:location, :schedule).where(user_id: params[:id])
     @info = @user.info || Info.new(user: @user)
+    @saved_searches = SavedSearch.where user_id: params[:id]
   end
 
   def new

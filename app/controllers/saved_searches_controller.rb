@@ -24,7 +24,7 @@ class SavedSearchesController < ApplicationController
   def destroy
     saved_search = SavedSearch.find params[:id]
     saved_search.destroy
-
+    redirect_to user_path(saved_search.user)
   end
 
   def show

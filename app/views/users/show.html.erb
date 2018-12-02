@@ -52,14 +52,28 @@
     <div class="col-md">
       <% if ( current_user == @user && current_user.is_teacher == true )%>                  
         <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
-      <% end %>
+      <% end %>        
       <% @yoga_classes.each do |yc| %>
-
         <div class="card bg-light mb-4" >       
           <div class="card-body">
             <h5 class="card-title"><a><%= yc.title %></a></h5>
             <p class="card-text">location: <%= yc.location.studio %>, <%= yc.location.address %> <%= yc.location.city %></p>
-            <p class="card-text"><%= yc.schedule.class_type%></p>        
+            <p class="card-text">Class type<%= yc.schedule.class_type%></p>        
+          </div>
+        </div>
+      <% end %>
+     
+      <% if @user == current_user %>
+        <div class="card bg-light mb-4" >       
+          <div class="card-body">
+            <h5 class="card-title">Saved searches</h5>   
+            <ul class="list-group">
+              <% @saved_searches.each do |search| %>           
+                <li class="list-group-item"><%= search.name %>
+                <%= link_to "delete", user_saved_search_path(@user, search), method: :delete, data: { confirm: 'Are you certain?' }%>
+                </li> 
+              <% end %>
+            </ul>
           </div>
         </div>
       <% end %>
