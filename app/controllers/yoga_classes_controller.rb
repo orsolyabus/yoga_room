@@ -31,6 +31,7 @@ class YogaClassesController < ApplicationController
 
   def index
     @yoga_classes = YogaClass.all
+    @saved_search = SavedSearch.new
   end
 
   def update
@@ -70,9 +71,6 @@ class YogaClassesController < ApplicationController
   end
 
   def authorize_user!
-    p "###################"
-    puts " authorisation running"
-    p "###################"
     unless can?(:crud, YogaClass.new )
       flash[:warning] = "you have to be a teacher to do that" 
       redirect_to yoga_classes_path

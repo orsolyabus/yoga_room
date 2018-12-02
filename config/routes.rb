@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
   resources :users do 
     resources :infos
+    resources :saved_searches, only: [:create, :destroy, :show]
   end
   
   resource :sessions, only: [:new, :create, :destroy]
