@@ -29,8 +29,7 @@ class SavedSearchesController < ApplicationController
 
   def show
     saved_search = SavedSearch.find params[:id]
-    puts JSON(saved_search[:params])
-    render json: saved_search[:params]
+    redirect_to yoga_class_search_path + "?" + JSON(saved_search[:params]).to_query
   end
 
   private

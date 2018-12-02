@@ -11,13 +11,13 @@
   
   
   <div class="row">
-    <div class="col-md-8">
+    <div class="col-md-6">
     
       <div class="card bg-light mb-4" >
         <div class="card-body">
           <div class="row">
            
-            <div class="col-sm-6">
+            <div class="col-sm-7">
               <%= image_tag @info.image.variant(resize: '300X300') if @info.image.attached? %>
             </div>
              
@@ -50,33 +50,42 @@
     </div>
 
     <div class="col-md">
-      <% if ( current_user == @user && current_user.is_teacher == true )%>                  
-        <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
-      <% end %>        
-      <% @yoga_classes.each do |yc| %>
-        <div class="card bg-light mb-4" >       
-          <div class="card-body">
-            <h5 class="card-title"><a><%= yc.title %></a></h5>
-            <p class="card-text">location: <%= yc.location.studio %>, <%= yc.location.address %> <%= yc.location.city %></p>
-            <p class="card-text">Class type<%= yc.schedule.class_type%></p>        
-          </div>
+      <div class="row">
+        <div class="col">
+          <% if ( current_user == @user && current_user.is_teacher == true )%>                  
+            <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
+          <% end %>        
+          <% @yoga_classes.each do |yc| %>
+            <div class="card bg-light mb-4" >       
+              <div class="card-body">
+                <h5 class="card-title"><a><%= yc.title %></a></h5>
+                <p class="card-text">location: <%= yc.location.studio %>, <%= yc.location.address %> <%= yc.location.city %></p>
+                <p class="card-text">Class type<%= yc.schedule.class_type%></p>        
+              </div>
+            </div>
+          <% end %>
         </div>
-      <% end %>
-     
-      <% if @user == current_user %>
-        <div class="card bg-light mb-4" >       
-          <div class="card-body">
-            <h5 class="card-title">Saved searches</h5>   
-            <ul class="list-group">
-              <% @saved_searches.each do |search| %>           
-                <li class="list-group-item"><%= search.name %>
-                <%= link_to "delete", user_saved_search_path(@user, search), method: :delete, data: { confirm: 'Are you certain?' }%>
-                </li> 
-              <% end %>
-            </ul>
-          </div>
+        
+        <% if @user == current_user %>
+          <div class="col">
+            <div class="card bg-light mb-4" >       
+              <div class="card-body">
+                <h5 class="card-title">Saved searches</h5>   
+                <ul class="list-group">
+                  <% @saved_searches.each do |search| %>           
+                    <li class="list-group-item">
+                      <%= link_to(search.name , user_saved_search_path(@user, search) ) %>
+                      <small>
+                        <%= link_to "delete", user_saved_search_path(@user, search), method: :delete, data: { confirm: 'Are you certain?' }%>
+                      </small>
+                    </li> 
+                  <% end %>
+                </ul>
+              </div>
+            </div>
+          <% end %>
         </div>
-      <% end %>
+      </div>
     </div>
 
   </div>

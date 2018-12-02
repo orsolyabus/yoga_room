@@ -52,11 +52,12 @@ class YogaClassesController < ApplicationController
   end
 
   def search
-    @params = params
-    @search_params = helpers.get_search_params(@params)
-    @yoga_classes = helpers.search(@search_params)
+    search_params = helpers.get_search_params(params)
+    @yoga_classes = helpers.search(search_params)
+    @saved_search ||= SavedSearch.new
     respond_to do |format|
-      format.js
+      format.js { render }
+      format.html { render :index }
     end
   end
 
