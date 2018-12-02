@@ -1,3 +1,8 @@
 results = document.querySelector("#search-results")
 
 results.innerHTML=`<%=j render "search_results" %>`
+
+// console.log(JSON.stringify(a))
+$("#saved_search_params")[0].value = JSON.stringify($("#search form").serializeJSON())
+
+// console.log(b)

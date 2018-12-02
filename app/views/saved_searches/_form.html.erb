@@ -1,0 +1,5 @@
+<%= simple_form_for [current_user, @saved_search] do |f| %>     
+  <%= f.input :name %>
+  <%= f.hidden_field :params %>
+  <%= f.submit %>
+<% end %>
