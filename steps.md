@@ -19,8 +19,10 @@
 - [x] search engine 
 - [x] dynamic search result display
 - [x] saved search and background jobs
-- [ ] fix modal for saved search
+- [x] fix modal for saved search
 - [ ] front end design
+- [ ] reduce spammy e-mail sending to 1/day
+- [ ] create unit tests
   
 - [ ] teacher notifications
 - [ ] request a class
