@@ -67,14 +67,9 @@
 
     <main class="container-fluid p-2">
 
-      <% flash.each do |type, message| %>
-        <div class="alert alert-<%= type %> alert-dismissible fade show" role="alert">
-          <%= message %>
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </div>
-      <% end %>
+      <div class='flash-container'>
+        <%= render "layouts/flash" %>
+      </div>
       <div class="container-fluid">
         <%= yield %>
       </div>

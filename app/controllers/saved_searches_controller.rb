@@ -5,20 +5,22 @@ class SavedSearchesController < ApplicationController
     @saved_search = SavedSearch.new saved_search_params
     @saved_search.user = current_user
     
-    # respond_to do |format|
-    #   if @saved_search.save
-    #     format.js
-    #   else
-    #     format.js {render :error}
-    #   end
-    # end
-    if @saved_search.save
-      flash[:success] = "Search saved"
-      redirect_to yoga_classes_path
-    else
-      flash[:danger] = @saved_search.errors.full_messages.join(", ")
-      redirect_to yoga_classes_path
+    respond_to do |format|
+      if @saved_search.save
+        flash.now[:success] = 'Saved!'
+        format.js {render :create}
+        
+      else
+        format.js {render :error}
+      end
     end
+    # if @saved_search.save
+    #   flash[:success] = "Search saved"
+    #   redirect_to yoga_classes_path
+    # else
+    #   flash[:danger] = @saved_search.errors.full_messages.join(", ")
+    #   redirect_to yoga_classes_path
+    # end
   end
 
   def destroy

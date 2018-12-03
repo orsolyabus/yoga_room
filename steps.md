@@ -18,10 +18,11 @@
 - [x] search view
 - [x] search engine 
 - [x] dynamic search result display
-- [ ] notifications
-- [ ] background jobs
+- [x] saved search and background jobs
+- [ ] fix modal for saved search
 - [ ] front end design
-
+  
+- [ ] teacher notifications
 - [ ] request a class
 - [ ] news feed of newest yoga classes on landing page
 
