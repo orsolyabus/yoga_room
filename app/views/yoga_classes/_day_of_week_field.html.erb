@@ -29,3 +29,14 @@
       <label for="day_of_week_6" class="form-check-label">Saturday</label>
     </div>
   </fieldset>
+   <input type="hidden" id="buffer"  value="<%= params['day_of_week']%>">
+
+<script>
+  const days = document.querySelector("#buffer").value
+  const checkBs = document.querySelectorAll(".form-check-input")
+  checkBs.forEach(cb => {
+    if (days.includes(cb.value)){
+      cb.checked = true
+    }
+  })
+</script>
