@@ -9,7 +9,7 @@ class SearchAlertJob < ApplicationJob
     searches.each do |s|
       match = match_yoga_class(yc, s.params)[0]
       if match
-         puts "send email"
+        SearchAlertMailer.send_search_alert(s, match).deliver_later
       else
         puts "no email"
       end
