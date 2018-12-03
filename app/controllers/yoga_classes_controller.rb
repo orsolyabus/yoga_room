@@ -53,7 +53,7 @@ class YogaClassesController < ApplicationController
   end
 
   def search
-    # search_params = helpers.get_search_params(params)
+    @params = params
     @yoga_classes = helpers.search_this(YogaClass.all, params)
     @saved_search ||= SavedSearch.new
     respond_to do |format|

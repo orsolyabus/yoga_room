@@ -1,53 +1,38 @@
 <div id="search">
   <%= simple_form_for "", url: yoga_class_search_path, method: :get, id:"search-form", remote: true  do |f| %>
-    <%= f.input :keyword , required: false %>
+    <%= f.input :keyword , required: false, input_html:{value: params[:keyword]} %>
     <div class="row">
-      <%= f.input :class_type , as: :select, collection: ["regular", "course", "workshop"] , required: false, wrapper_html: {class: "col"} %>
-      <%= f.input :teacher, required: false, wrapper_html: {class: "col"}  %> 
+      <%= f.input :class_type , as: :select, collection: ["regular", "course", "workshop"] , required: false, wrapper_html: {class: "col"} , input_html:{value: params[:class_type]}%>
+      <%= f.input :teacher, required: false, wrapper_html: {class: "col"}, input_html:{value: params[:teacher]}  %> 
     </div>
-
+    
     <%= render "day_of_week_field" %>
 
     <div class="row">
-      <%= f.input :day_after, as: :date, html5: true, required: false, wrapper_html: {class: "col"} %>
-      <%= f.input :day_before , as: :date, html5: true, required: false , wrapper_html: {class: "col"}%> 
+      <%= f.input :day_after, as: :date, html5: true, required: false, wrapper_html: {class: "col"}, input_html:{value: params[:day_after]} %>
+      <%= f.input :day_before , as: :date, html5: true, required: false , wrapper_html: {class: "col"}, input_html:{value: params[:day_before]} %> 
     </div>
     
     <div class="row">
-      <%= f.input :studio, required: false , wrapper_html: {class: "col"} %>
-      <%= f.input :city, required: false , wrapper_html: {class: "col"} %><%# dropdown %>
+      <%= f.input :studio, required: false , wrapper_html: {class: "col"}, input_html:{value: params[:studio]} %>
+      <%= f.input :city, required: false , wrapper_html: {class: "col"}, input_html:{value: params[:city]} %><%# dropdown %>
     </div>
     
     <div class="row">
-      <%= f.input :country, required: false , wrapper_html: {class: "col"} %><%# dropdown %>
-      <%= f.input :state, required: false , wrapper_html: {class: "col"} %> <%# dropdown %>
+      <%= f.input :country, required: false , wrapper_html: {class: "col"}, input_html:{value: params[:country]} %><%# dropdown %>
+      <%= f.input :state, required: false , wrapper_html: {class: "col"}, input_html:{value: params[:state]} %> <%# dropdown %>
     </div>
     <div class="d-flex justify-content-between">
       <%= f.submit "Search", class: "btn btn-primary", id: "search_button" %>
-      <%# <button type="button" class= "btn btn-secondary" data-toggle="modal" data-target="#save-search-form" >
-        Save Search
-      </button> %>
+      <% if current_user%>
+        <button type="button" class= "btn btn-secondary" data-toggle="modal" data-target="#save-search-form" >
+          Save Search
+        </button>
+      <% end %>
     </div>
   <% end %>
 </div>
+
 <% if current_user%>
-<%# <div class="modal fade" id="save-search-form" tabindex="-1" role="dialog" aria-labelledby="save-search-form-label" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header"> %>
-        <h5 class="modal-title" id="save-search-form-label">Save Search</h5>
-        <%# <button type="button" class="close" data-dismiss="modal" aria-label="Close" id="XX">
-          <span aria-hidden="true">&times;</span>
-        </button> 
-      </div>%>
-      <div class="modal-body">
-        <%= render "saved_searches/form"%>
-      </div>
-    <%# </div>
-  </div>
-</div> %>
+  <%= render "saved_searches/modal"%>
 <% end %>
-
-<script>
-
-</script>
