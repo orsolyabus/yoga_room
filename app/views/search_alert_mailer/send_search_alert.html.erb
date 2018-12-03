@@ -1,0 +1,12 @@
+<h2>Hi, <%= @user.name %></h2>
+<p>There is a new yoga class, that matches your "<%= @search.name %>" search. </p>
+<h3><%= @yoga_class.title %></h3>
+<p>taught by: <%= @yoga_class.user.info.spiritual_name%></p>
+<p>it starts: <%= @yoga_class.schedule.start.in_time_zone.strftime("on %Y %B %e, at %l:%M%P")%></p>
+<ul>
+  <p>"<%= @yoga_class.description[0, 300] %>"</p>
+</ul>
+
+<%= link_to("Click here for more information", yoga_class_url(@yoga_class))%>
+<p> </p>
+<p>See you soon, the Yoga Room team</p>

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
-
+  mount Crono::Web, at: '/crono'
+  
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :users do 

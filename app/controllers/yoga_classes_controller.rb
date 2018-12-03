@@ -20,6 +20,7 @@ class YogaClassesController < ApplicationController
     @yoga_class.schedule = @schedule
 
     if  (@yoga_class.save && @schedule.save)
+      SearchAlertJob.perform_later(@yoga_class)
       redirect_to @yoga_class
     else
       render :new
@@ -52,8 +53,8 @@ class YogaClassesController < ApplicationController
   end
 
   def search
-    search_params = helpers.get_search_params(params)
-    @yoga_classes = helpers.search(search_params)
+    # search_params = helpers.get_search_params(params)
+    @yoga_classes = helpers.search_this(YogaClass.all, params)
     @saved_search ||= SavedSearch.new
     respond_to do |format|
       format.js { render }
