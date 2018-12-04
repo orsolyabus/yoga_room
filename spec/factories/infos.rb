@@ -1,12 +1,12 @@
 FactoryBot.define do
   factory :info do
-    teacher { nil }
-    spiritual_name { "MyString" }
-    image_url { "MyString" }
-    webpage { "MyString" }
-    introduction { "MyText" }
-    phone { "MyString" }
+    association(:user, factory: :user)
+
+    spiritual_name { Faker::Space.constellation }
+    image_url { Faker::Avatar.image }
+    webpage { "www.#{Faker::Internet.domain_name}" }
+    introduction { Faker::Lorem.paragraphs(2, true) }
+    phone { Faker::PhoneNumber.phone_number }
     public_contact { false }
-    last_login { "2018-11-05 19:46:05" }
   end
 end
