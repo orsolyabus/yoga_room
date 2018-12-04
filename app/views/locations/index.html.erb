@@ -4,7 +4,7 @@
 
     <% @locations.each do |location| %>
       <div class="col-md-6 col-lg-4" >
-        <div class="card bg-light my-2" style="height: 170px" >
+        <div class="card shadow-sm my-2" style="height: 11rem" >
           <div class="card-body">
             <h5 class="card-title"><%= location.studio %> </h5>
             <p>
@@ -13,7 +13,7 @@
               <%= location.state %>
               <%= location.country %>
             </p>
-            <%= link_to 'Show', location_path(location) %>
+            <%= link_to 'Show', location_path(location), class: "btn btn-primary" %>
           </div>
         </div>
       </div>

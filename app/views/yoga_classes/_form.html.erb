@@ -4,10 +4,11 @@
   <%= f.input :description %>
   <%= render "location" %>
 
-  <button type="button" class="btn btn-secondary" data-toggle="modal" data-target="#newLocationForm">
+  <button type="button" class="btn btn-secondary mb-3" data-toggle="modal" data-target="#newLocationForm">
     New Location
   </button>
-  <%= f.simple_fields_for :schedule do |schedule_form| %>
+  <div>
+    <%= f.simple_fields_for :schedule do |schedule_form| %>
       <%= schedule_form.input :class_type,
        as: :select, collection: ["regular", "course", "workshop"] , 
        required: true , 
@@ -15,10 +16,8 @@
       <%= schedule_form.input :start, hint: "" , wrapper_html: {class: "hidden"} , required: true %>
       <%= schedule_form.input :end , hint: "",  wrapper_html: {class: "hidden"} , required: true %>
       <%= schedule_form.input :duration , hint: "The length of one class in minutes",  wrapper_html: {class: "hidden"} , required: true %>
-
-		
-	<% end %>
-
+	  <% end %>
+  </div>
   <%= f. submit class: "btn btn-primary" %>
 
 <% end %>
@@ -36,9 +35,6 @@
         <div id="location-form">
           <%= render "locations/form" %>
         </div>       
-     
-        <button type="button" class="btn mt-2" data-dismiss="modal">Cancel</button>
-         
       </div>
     </div>
   </div>

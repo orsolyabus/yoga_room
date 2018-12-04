@@ -1,10 +1,10 @@
-<%= simple_form_for @location, remote: true do |f| %>
+<%= simple_form_for @location, class: "bg-light", remote: true do |f| %>
   <%= f.input :address %>
   <%= f.input :city %>
   <%= f.input :studio %>
   <%= f.input :country, as: :select, collection: ["Canada", "Hungary"] ,include_blank: false %>
   <%= f.input :state %>
 
-  <%= f.submit class: "btn"%>
+  <%= f.submit class: "btn btn-primary"%>
 
 <% end %>

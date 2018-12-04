@@ -31,7 +31,7 @@ class YogaClassesController < ApplicationController
   end
 
   def index
-    @yoga_classes = YogaClass.all
+    @yoga_classes = YogaClass.all.order(created_at: :desc)
     @saved_search = SavedSearch.new
   end
 
@@ -54,7 +54,7 @@ class YogaClassesController < ApplicationController
 
   def search
     @params = params
-    @yoga_classes = helpers.search_this(YogaClass.all, params)
+    @yoga_classes = helpers.search_this(YogaClass.all, params).order(created_at: :desc)
     @saved_search ||= SavedSearch.new
     respond_to do |format|
       format.js { render }
