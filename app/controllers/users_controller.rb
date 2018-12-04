@@ -9,7 +9,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @yoga_classes = YogaClass.includes(:location, :schedule).where(user_id: params[:id])
+    @yoga_classes = YogaClass.includes(:location, :schedule).where(user_id: params[:id]).order(created_at: :desc)
     @info = @user.info || Info.new(user: @user)
     @saved_searches = SavedSearch.where user_id: params[:id]
   end

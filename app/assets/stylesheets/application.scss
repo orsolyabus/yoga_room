@@ -12,6 +12,27 @@
  *
  */
 
+$primary:       #C55E65 !default;
+$secondary:     #CC9773 !default;
+$success:       #709656 !default;
+$info:          #8F7673 !default;
+$warning:       #ee861e !default;
+$danger:        #f44336 !default;
+$light:         #F3F0F1 !default;
+$dark:          #512324 !default;
+
+ $theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+ 
+
  @import "bootstrap";
 
  .simple_form abbr {
@@ -24,4 +45,17 @@
  #main-index {
   max-width: 1200px;
 
+}
+
+.navbar-dark .navbar-brand{
+  color: $light
+}
+
+.form-control {
+  border-color: rgba( $secondary, .5 ) 
+}
+
+.yclass-list .card:first-child {
+  background-color: $secondary;
+  color: $light
 }
