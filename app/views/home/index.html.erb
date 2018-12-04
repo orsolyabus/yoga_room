@@ -1,19 +1,22 @@
 
 
 <h1 class="text-center">Welcome to the Yoga Room!</h1>
-<div class="jumbotron" >
-  <div class="row">
-    <div class="col justify">
-     <p>Looking for a yoga class? </p>
-      
-      <%= link_to("Search here", yoga_classes_path, class: "btn btn-primary")%>
+<div class="text-center" >
+  <div class="mx-auto d-block" style="background-image: url('/mindfulness_scgo.png'); background-size: cover; min-height: 853px; max-width: 1225px">
+    <div class=" d-flex align-items-end justify-content-center pt-4">
+      <div class=" mr-4" style="">
+      <h3>Looking for a yoga class? </h3>
+        
+        <%= link_to("Search here", yoga_classes_path, class: "btn btn-primary")%>
+      </div>
+      <div class="ml-4 ">
+        <h3>Are you a teacher?</h3>
+        <h5>Sign up and add your classes!</h5>
+        <%= link_to("Sign Up", new_user_path, class: "btn btn-primary")%>
+        <%= link_to("Log in", new_sessions_path, class: "btn btn-secondary")%>
+      </div>
     </div>
-    <div class="col">
-      <h3>Are you a teacher?</h3>
-      <h5>Sign up and add your classes!</h5>
-      <%= link_to("Sign Up", new_user_path, class: "btn btn-primary")%>
-      <%= link_to("Log in", new_sessions_path, class: "btn btn-secondary")%>
-    </div>
-     <img src="mindfulness_scgo.png" alt="image" class="img-fluid" >
   </div>
+    <%# <img src="mindfulness_scgo.png" alt="image" class="mx-auto d-block" style="max-width: 100% ; z-index: 0" > %>
+  
 </div>
