@@ -1,5 +1,5 @@
 <%= simple_form_for [current_user, @saved_search], remote: true do |f| %>     
   <%= f.input :name %>
   <%= f.hidden_field :params %>
-  <%= f.submit %>
+  <%= f.submit "Save search", class: "btn btn-primary" %>
 <% end %>

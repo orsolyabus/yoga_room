@@ -61,7 +61,10 @@ $dark:          #512324 !default;
 
 .yclass-list .card:first-child {
   background-color: $secondary;
-  color: $light
+  color: $light;
+  a {
+    color: darken( $primary, 10% )
+  }
 }
 
 .btn-secondary {

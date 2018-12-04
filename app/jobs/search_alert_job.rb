@@ -2,8 +2,8 @@ class SearchAlertJob < ApplicationJob
   queue_as :default
 
   def perform(yoga_class)
-    puts "--------------------"
-    puts " Running a job... 🖖"
+    # puts "--------------------"
+    # puts " Running a job... 🖖"
     yc = YogaClass.where(id: yoga_class.id)
     searches = SavedSearch.all
     searches.each do |s|
@@ -19,8 +19,8 @@ class SearchAlertJob < ApplicationJob
 
   def match_yoga_class(yc, params)
     result = ApplicationController.helpers.search_this(yc, JSON(params) )
-    puts "--------------------"
-    p result
+    # puts "--------------------"
+    # p result
   end
 
 end
