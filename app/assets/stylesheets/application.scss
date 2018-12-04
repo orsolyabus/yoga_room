@@ -55,6 +55,10 @@ $dark:          #512324 !default;
   border-color: rgba( $secondary, .5 ) 
 }
 
+.card{
+  border-color: rgba( $info, .3)
+}
+
 .yclass-list .card:first-child {
   background-color: $secondary;
   color: $light

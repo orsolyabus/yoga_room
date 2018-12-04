@@ -6,6 +6,6 @@ class Location < ApplicationRecord
   has_many :yoga_classes, dependent: :nullify
 
   def location_list_view
-    "#{studio} #{address} #{city} #{state}"
+    "#{studio} #{address} #{city} #{country}"
   end
 end

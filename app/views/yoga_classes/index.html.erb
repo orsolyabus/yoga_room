@@ -12,11 +12,7 @@
     <div class="col-md">
       <div class="card">
         <div class="card-body" id="search-results">
-          <% @yoga_classes.each do |yc| %>
-            <li>
-              <%= link_to(yc.title, yoga_class_path(yc) )%>
-            </li>
-          <% end %>
+          <%= render "search_results"%>
         </div>
       </div>
     </div>

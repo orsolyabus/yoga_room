@@ -58,7 +58,7 @@
           <% end %>     
           <div class="yclass-list">   
             <% @yoga_classes.each do |yc| %>
-              <div class="card mb-4" >       
+              <div class="card shadow-sm mb-4" >       
                 <div class="card-body yoga-cl">
                   <h5 class="card-title"><a><%= yc.title %></a></h5>
                   <p class="card-text">location: <%= yc.location.studio %>, <%= yc.location.address %> <%= yc.location.city %></p>
