@@ -1,10 +1,15 @@
-<h2><%= @yoga_class.title %></h2>
-<div class="card">
-  <div class="card-body">
-    <h4 class="card-title"><small> teacher:</small> <%= @yoga_class.user.info.spiritual_name %></h4>
-    <p><%= @yoga_class.description %></p>
-    <p>location: <%= @yoga_class.location.location_list_view %></p>
-    <p>class type: <%= @yoga_class.schedule.class_type %></p>
-    <p><%= @yoga_class.schedule.start&.in_time_zone.strftime("on %Y %B %e, at %l:%M%P") %></p>
+<div class="d-flex justify-content-center">
+  <div >
+    <h2><%= @yoga_class.title %></h2>
+
+    <div class="card" style="max-width: 700px">
+      <div class="card-body">
+        <h4 class="card-title"><small> teacher:</small> <%= @yoga_class.user.info&.spiritual_name %> - <%= @yoga_class.user.name %></h4>
+        <p><%= @yoga_class.description %></p>
+        <p>location: <%= @yoga_class.location.location_list_view %></p>
+        <p>class type: <%= @yoga_class.schedule.class_type %></p>
+        <p><%= @yoga_class.schedule.start&.in_time_zone.strftime("on %Y %B %e, at %l:%M%P") %></p>
+      </div>
+    </div>
   </div>
 </div>

@@ -148,7 +148,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_063956) do
     t.bigint "user_id"
     t.bigint "location_id"
     t.index ["location_id"], name: "index_yoga_classes_on_location_id"
-    t.index ["user_id"], name: "index_yoga_classes_on_user_id"
+    t.index ["user_id"], name: "is_ndex_yoga_classeon_user_id"
   end
 
   add_foreign_key "infos", "users"
