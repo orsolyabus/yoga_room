@@ -3,12 +3,13 @@ class SearchAlertJob < ApplicationJob
 
   def perform(yoga_class)
     yoga_class = YogaClass.where(id: yoga_class.id)
-    searches = SavedSearch.all
-    searches.each do |s|
-      match = match_yoga_class(yoga_class, s.params)[0]
-      if match
-        SearchAlertMailer.send_search_alert(s, match).deliver_later
+    all_searches = SavedSearch.all.group_by(&:user_id)
+    all_searches.each_pair do |user_id, searches|
+      matching_searches = searches.select{|search| match_yoga_class(yoga_class, search.params)[0]}
+      if matching_searches.length > 0
+        SearchAlertMailer.send_search_alert(user_id, matching_searches, yoga_class[0]).deliver_later
       end
+
     end
   end
 

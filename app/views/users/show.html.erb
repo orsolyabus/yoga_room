@@ -52,10 +52,12 @@
 
     <div class="col-md">
       <div class="row">
+      <% if ( @user.is_teacher == true )%> 
         <div class="col">
           <% if ( current_user == @user && current_user.is_teacher == true )%>                  
             <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
-          <% end %>     
+          <% end %>  
+           
           <div class="yclass-list">   
             <% @yoga_classes.each do |yc| %>
               <div class="card shadow-sm mb-4" >       
@@ -68,7 +70,7 @@
             <% end %>
           </div>
         </div>
-        
+        <% end %>
         <% if @user == current_user %>
           <div class="col">
             <div class="card  mb-4" >       

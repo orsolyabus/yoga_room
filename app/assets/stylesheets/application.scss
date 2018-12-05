@@ -34,7 +34,9 @@ $dark:          #512324 !default;
  
 
  @import "bootstrap";
-
+* {
+  font-family: 'Montserrat', sans-serif;
+}
  .simple_form abbr {
   text-decoration: none;
 } 

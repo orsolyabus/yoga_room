@@ -1,12 +1,12 @@
 class SearchAlertMailer < ApplicationMailer
 
-  def send_search_alert( search, yoga_class)
-    @user = search.user
-    @search = search
+  def send_search_alert(user_id, searches, yoga_class)
+    @user = User.find(user_id)
+    @search_names = searches.map{ |s| s.name }.join(", ")
     @yoga_class = yoga_class
     mail(
       to: @user.email,
-      subject: "new yoga class that matches your #{@search.name} search!"
+      subject: "new yoga class that matches your #{@search_names} search(es)!"
     )
   end
 end
