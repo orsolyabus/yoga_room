@@ -9,6 +9,9 @@
         <p>location: <%= @yoga_class.location.location_list_view %></p>
         <p>class type: <%= @yoga_class.schedule.class_type %></p>
         <p><%= @yoga_class.schedule.show_time %></p>
+        <% if (can? :crud, @yoga_class) %>
+          <%= link_to "Edit class", edit_yoga_class_path(@yoga_class), class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
   </div>
