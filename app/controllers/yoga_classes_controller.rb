@@ -21,7 +21,7 @@ class YogaClassesController < ApplicationController
 
     if  (@yoga_class.save && @schedule.save)
       SearchAlertJob.perform_later(@yoga_class)
-      redirect_to @yoga_class
+      redirect_to user_path(current_user)
     else
       render :new
     end
