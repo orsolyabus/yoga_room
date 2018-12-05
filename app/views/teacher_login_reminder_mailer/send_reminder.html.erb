@@ -1,0 +1,16 @@
+<div style="border: thin solid #e0c0ab; padding: 10px">
+  <h2>Hi, <%= @user.name %></h2>
+  <p>You haven't logged in at Yoga Room in the last month.</p>
+  <p>These are your current classes presented. Are they up to date?</p>
+  <ul>
+    <% @yoga_classes.each do |yoga_class| %>
+      <li>
+        <h4><%= yoga_class.title %></h4>
+        <p><%= yoga_class.location.location_list_view %></p>
+        <p><%= yoga_class.schedule.show_time %></p>
+      </li>
+    <% end %>
+  </ul>
+  
+  <p>See you soon, the Yoga Room team</p>
+</div>

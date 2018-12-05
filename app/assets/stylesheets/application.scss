@@ -32,8 +32,8 @@ $dark:          #512324 !default;
   "dark":       $dark
 );
  
+@import "bootstrap";
 
- @import "bootstrap";
 * {
   font-family: 'Montserrat', sans-serif;
 }
