@@ -21,10 +21,10 @@
 - [x] saved search and background jobs
 - [x] fix modal for saved search
 - [x] front end design
-- [ ] reduce spammy e-mail sending to 1/day
+- [x] reduce spammy e-mail sending to 1/day
 - [ ] create unit tests
   
-- [ ] teacher notifications
+- [x] teacher notifications
 - [ ] request a class
 - [ ] news feed of newest yoga classes on landing page
 
