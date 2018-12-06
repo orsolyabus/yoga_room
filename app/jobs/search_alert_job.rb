@@ -9,7 +9,6 @@ class SearchAlertJob < ApplicationJob
       if matching_searches.length > 0
         SearchAlertMailer.send_search_alert(user_id, matching_searches, yoga_class[0]).deliver_later
       end
-
     end
   end
 

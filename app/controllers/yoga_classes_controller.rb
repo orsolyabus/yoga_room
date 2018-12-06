@@ -31,7 +31,7 @@ class YogaClassesController < ApplicationController
   end
 
   def index
-    @yoga_classes = YogaClass.all.order(created_at: :desc)
+    @yoga_classes = YogaClass.all.order(created_at: :desc).includes(:location, :schedule)
     @saved_search = SavedSearch.new
   end
 
