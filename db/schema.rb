@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_063956) do
+ActiveRecord::Schema.define(version: 2018_12_06_002117) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -60,6 +60,20 @@ ActiveRecord::Schema.define(version: 2018_12_03_063956) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "ahoy_messages", force: :cascade do |t|
+    t.string "user_type"
+    t.bigint "user_id"
+    t.text "to"
+    t.string "mailer"
+    t.text "subject"
+    t.datetime "sent_at"
+    t.string "token"
+    t.datetime "opened_at"
+    t.datetime "clicked_at"
+    t.index ["token"], name: "index_ahoy_messages_on_token"
+    t.index ["user_type", "user_id"], name: "index_ahoy_messages_on_user_type_and_user_id"
   end
 
   create_table "crono_jobs", force: :cascade do |t|
@@ -138,6 +152,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_063956) do
     t.datetime "updated_at", null: false
     t.boolean "is_teacher", default: false
     t.datetime "last_login"
+    t.string "second_email", default: "orsidoestest@gmail.com"
   end
 
   create_table "yoga_classes", force: :cascade do |t|
@@ -148,7 +163,7 @@ ActiveRecord::Schema.define(version: 2018_12_03_063956) do
     t.bigint "user_id"
     t.bigint "location_id"
     t.index ["location_id"], name: "index_yoga_classes_on_location_id"
-    t.index ["user_id"], name: "is_ndex_yoga_classeon_user_id"
+    t.index ["user_id"], name: "index_yoga_classes_on_user_id"
   end
 
   add_foreign_key "infos", "users"

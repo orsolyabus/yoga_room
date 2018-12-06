@@ -11,5 +11,5 @@
 #   end
 # end
 #
-Crono.perform(TeacherLoginAlertJob).every 30.seconds
+Crono.perform(TeacherLoginAlertJob).every 1.day,  at: {hour: 11, min: 15}
 #

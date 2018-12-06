@@ -47,6 +47,11 @@ class UsersController < ApplicationController
     redirect_to root_path
   end
 
+  def thank_you
+    user = User.find params[:id]
+    user.update last_login: Time.now
+  end
+
   private
 
   def find_user
