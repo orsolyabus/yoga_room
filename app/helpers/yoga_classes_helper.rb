@@ -57,7 +57,7 @@ module YogaClassesHelper
       query = query.where(location: location)
     end
 
-    query
+    query.includes(:location, :schedule)
   end
   
   private

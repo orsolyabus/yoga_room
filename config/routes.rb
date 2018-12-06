@@ -7,6 +7,7 @@ Rails.application.routes.draw do
     resources :infos
     resources :saved_searches, only: [:create, :destroy, :show]
   end
+  get "users/:id/thx", to: "users#thank_you", as: :thx
   
   resource :sessions, only: [:new, :create, :destroy]
   

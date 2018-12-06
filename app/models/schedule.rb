@@ -12,14 +12,24 @@ class Schedule < ApplicationRecord
   # course : start end duration
   # workshop: start, end
 
+  def show_time
+    if class_type == "regular"
+      return start.strftime("on %As at %l:%M%P")
+    elsif class_type == "course"
+      return "#{start.strftime("on %As at %l:%M%P")} from #{start.strftime("%Y %B %d")} to #{self.end.strftime("%Y %B %d")}"
+    elsif class_type == "workshop"
+      return "starting #{start.strftime("%Y %B %d at %l:%M%P")} till #{self.end.strftime("%Y %B %d at %l:%M%P")}"
+    end
+  end
+
   private
 
   def duration_needed?
-    class_type === "regular" || class_type === "course"
+    class_type == "regular" || class_type == "course"
   end
 
   def end_needed?
-    class_type === "workshop" || class_type === "course"
+    class_type == "workshop" || class_type == "course"
   end
 
   def start_must_be_future

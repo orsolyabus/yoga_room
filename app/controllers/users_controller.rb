@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.includes(:info).includes(:yoga_classes).where(is_teacher: true)
+    @users = User.includes(:info, :yoga_classes).where(is_teacher: true)
   end
 
   def show
@@ -45,6 +45,11 @@ class UsersController < ApplicationController
     @user.destroy
     session[:user_id] = nil
     redirect_to root_path
+  end
+
+  def thank_you
+    user = User.find params[:id]
+    user.update last_login: Time.now
   end
 
   private

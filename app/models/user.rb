@@ -9,5 +9,5 @@ class User < ApplicationRecord
   has_secure_password
   has_many :yoga_classes, dependent: :destroy
   has_many :saved_searches, dependent: :destroy
-
+  has_many :messages, class_name: "Ahoy::Message", as: :user
 end

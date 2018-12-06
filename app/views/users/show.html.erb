@@ -52,23 +52,25 @@
 
     <div class="col-md">
       <div class="row">
+      <% if ( @user.is_teacher == true )%> 
         <div class="col">
           <% if ( current_user == @user && current_user.is_teacher == true )%>                  
             <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
-          <% end %>     
+          <% end %>  
+           
           <div class="yclass-list">   
             <% @yoga_classes.each do |yc| %>
               <div class="card shadow-sm mb-4" >       
                 <div class="card-body yoga-cl">
                   <h5 class="card-title"><%= link_to(yc.title, yoga_class_path(yc)) %></h5>
                   <p class="card-text">location: <%= yc.location.studio %>, <%= yc.location.address %> <%= yc.location.city %></p>
-                  <p class="card-text">Class type: <%= yc.schedule.class_type%></p>        
+                  <p class="card-text"><%= yc.schedule.show_time%></p>        
                 </div>
               </div>
             <% end %>
           </div>
         </div>
-        
+        <% end %>
         <% if @user == current_user %>
           <div class="col">
             <div class="card  mb-4" >       

@@ -1,11 +1,11 @@
 <div class="row ">
   <% @yoga_classes.each do |yc| %>
     <div class="col-6">
-      <div class="card my-2 shadow-sm" style="height: 200px">
+      <div class="card my-2 shadow-sm" style="height: 12rem">
         <div class="card-body">
           <h5 class="card-title"><%= link_to(yc.title, yoga_class_path(yc))%></h5>
           <p><%= yc.location.location_list_view %></p>
-          <p><%= yc.schedule.start&.in_time_zone&.strftime("on %Y %B %e, at %l:%M%P")%></p>
+          <p><%= yc.schedule.show_time %></p>
         </div>
       </div>
     </div>
