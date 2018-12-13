@@ -3,7 +3,7 @@
 My application is for yoga teachers and students. Teacher create classes, students search for them.
 Every user has a profile page, where they can have picture, contact info and introduction, saved searches (private), and the teachers theeir classes.
 
-## To install this app you sill need:
+## To install this app you will need:
 
 * Ruby version 2.5.2
 
@@ -14,7 +14,7 @@ Every user has a profile page, where they can have picture, contact info and int
 bundle
 rails db:migrate
 ```
-* Start the server with: 
+### Start the server with: 
 ```bash
 rails s
 ```
