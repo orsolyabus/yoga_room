@@ -24,14 +24,6 @@ class Api::V1::LocationsController < ApplicationController
   def index
     locations = Location.all.order(:city)
     render json: locations
-    #<select>
-    #<ul>
-    #yoga_classes = fetch from YogaClassesController#index
-    #for yoga_class in yoga_classes {
-    #<li>yoga_class.location</li>
-    #}
-    #</ul>
-    #</select>
   end
 
   private
