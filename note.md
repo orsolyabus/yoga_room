@@ -10,4 +10,5 @@
 * add admin user
 * add delete class 
 
+* pre-filter by location
 * add yoga styles
