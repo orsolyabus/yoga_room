@@ -37,7 +37,12 @@ $dark:          #512324 !default;
 * {
   font-family: 'Montserrat', sans-serif;
 }
- .simple_form abbr {
+
+body {
+  padding-top: 4rem
+}
+
+.simple_form abbr {
   text-decoration: none;
 } 
 

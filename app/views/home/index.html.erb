@@ -1,23 +1,34 @@
 
 
 <h1 class="text-center">Welcome to the Yoga Room!</h1>
-<div class="text-center" >
-  <div class="mx-auto d-block" style="background-color: white; max-width: 1225px">
-  
-    <div class=" d-flex align-items-end justify-content-center pt-4">
-      <div class=" mr-4" style="">
-      <h3>Looking for a yoga class? </h3>
+
+<div class="row" >
+
+  <div class="col " >
+    <div class="row align-items-end ">
+      <div class="col-md-6" style="">
+        <h3>Looking for a yoga class? </h3>
         
         <%= link_to("Search here", yoga_classes_path, class: "btn btn-primary")%>
       </div>
-      <div class="ml-4 ">
+      <div class="col-md-6">
         <h3>Are you a teacher?</h3>
         <h5>Sign up and add your classes!</h5>
         <%= link_to("Sign Up", new_user_path, class: "btn btn-primary")%>
         <%= link_to("Log in", new_sessions_path, class: "btn btn-secondary")%>
       </div>
     </div>
+    <div class="row justify-content-center">
+      <div class="col ">
+        <img src="mindfulness.svg" alt="image" class="img-fluid" style="max-width: 100% ; z-index: 0" >
+      </div>
+    </div>
   </div>
-    <img src="mindfulness_scgo.png" alt="image" class="mx-auto d-block" style="max-width: 100% ; z-index: 0" >
+  <div class="col-sm-4">
+    <p>This site is a work in progress. If you have an idea for improvement, please contact us.</p>
+    <p>Thank you for your understanding!</p>
+    <img src="development.svg" class="img-fluid" style="max-width: 100%">
+  </div>
+</div>  
   
 </div>
