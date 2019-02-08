@@ -2,7 +2,7 @@
 <!-- * group navigation -->
 <!-- * note on front page: "work in progress" -->
 <!-- * login on landing page -->
-* detailed search "more options" indicate that it opens here
+<!-- * indicate that detailed search "more options" opens here -->
 * add delete class 
 * badges for class types
 * footer with business stuff

@@ -7,11 +7,9 @@
     </div>
     
     <%= render "day_of_week_field" %>
-    <div class="d-flex justify-content-end">
-      <a class="btn btn-info btn-sm mb-2" data-toggle="collapse" href="#collapseForm" role="button" aria-expanded="false" aria-controls="collapseForm">
-        More details
-      </a>
-    </div>
+    <a class="btn btn-outline-info mb-2 dropdown-toggle" data-toggle="collapse" href="#collapseForm" role="button" aria-expanded="false" aria-controls="collapseForm">
+      More details
+    </a>
     <div class="collapse" id="collapseForm">
       <div class="row">
         <%= f.input :day_after, as: :date, html5: true, required: false, wrapper_html: {class: "col"}, input_html:{value: params[:day_after]} %>
