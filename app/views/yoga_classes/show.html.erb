@@ -11,7 +11,10 @@
         <p><%= @yoga_class.schedule.show_time %></p>
         <% if current_user %>
           <% if (can? :crud, @yoga_class) %>
-            <%= link_to "Edit class", edit_yoga_class_path(@yoga_class), class: "btn btn-primary" %>
+            <div class="d-flex justify-content-between">
+              <%= link_to "Edit class", edit_yoga_class_path(@yoga_class), class: "btn btn-primary" %>
+              <%= link_to 'Delete class', yoga_class_path(@yoga_class), method: :delete, data: { confirm: 'Are you certain?' }, class: "btn btn-danger" %>
+            </div>
           <% end %>
         <% end %>
       </div>
