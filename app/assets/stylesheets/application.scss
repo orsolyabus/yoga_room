@@ -66,8 +66,8 @@ body {
   border-color: rgba( $info, .3)
 }
 
-.yclass-list .card:first-child {
-  background-color: $secondary;
+.yclass-list div:first-child .card{
+  background-color: lighten($secondary, 10%);
   color: $light;
   a {
     color: darken( $primary, 10% )

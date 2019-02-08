@@ -1,13 +1,7 @@
 <div class="row ">
   <% @yoga_classes.each do |yc| %>
     <div class="col-6 pb-4">
-      <div class="card shadow" style="height: 100%">
-        <div class="card-body">
-          <h5 class="card-title"><%= link_to(yc.title, yoga_class_path(yc))%></h5>
-          <p><%= yc.location.location_list_view %></p>
-          <p><%= yc.schedule.show_time %></p>
-        </div>
-      </div>
+      <%= render partial: "yoga_classes/yoga_class_card", locals: {yc: yc} %>
     </div>
   <% end %>
 </div>
