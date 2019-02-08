@@ -1,12 +1,10 @@
-
-<h2>Log In</h2>
-<div class="card">
-  <div class="card-body">
-    <%= simple_form_for "", url: sessions_path do |f| %>
-      <%= f.input :email %>
-      <%= f. input :password %>
-
-      <%= submit_tag 'Sign In', class: "btn btn-primary" %>
-    <% end %>
+  <h2 class="mx-auto" style="max-width: 600px">Log In</h2>
+  <div class="mt-4 mx-auto" style="max-width: 600px" style="max-width: 600px" >
+    <%# <div class="card-body" > %>
+      <%= simple_form_for "", url: sessions_path do |f| %>
+        <%= f.input :email %>
+        <%= f. input :password %>
+        <%= submit_tag 'Sign In', class: "btn btn-primary" %>
+      <% end %>
+    <%# </div> %>
   </div>
-</div>
