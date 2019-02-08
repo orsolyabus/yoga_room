@@ -3,7 +3,7 @@
 <!-- * note on front page: "work in progress" -->
 <!-- * login on landing page -->
 <!-- * indicate that detailed search "more options" opens here -->
-* add delete class 
+<!-- * add delete class  -->
 * badges for class types
 * footer with business stuff
 * more details on index pages, eg: photo
