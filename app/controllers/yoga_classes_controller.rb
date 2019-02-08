@@ -49,7 +49,7 @@ class YogaClassesController < ApplicationController
 
   def destroy
     @yoga_class.destroy
-    render :index
+    redirect_to current_user
   end
 
   def search
