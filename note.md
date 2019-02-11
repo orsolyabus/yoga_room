@@ -6,6 +6,7 @@
 <!-- * add delete class  -->
 <!-- * badges for class types -->
 <!-- * simplify dates -->
+<!-- !!! fix search results !!! -->
 * footer with business stuff
 * more details on index pages, eg: photo
 * more info on location show page
