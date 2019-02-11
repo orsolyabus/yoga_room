@@ -8,8 +8,10 @@
 <!-- * simplify dates -->
 * footer with business stuff
 * more details on index pages, eg: photo
-* add admin user
+* more info on location show page
+<!-- * add admin user // AdminUser.create!(:email => '', :password => '', :password_confirmation => '') -->
 * pre-filter by location
 * add yoga styles
+* add cookie agreement
   
 * keep the colours
