@@ -14,11 +14,11 @@ class Schedule < ApplicationRecord
 
   def show_time
     if class_type == "regular"
-      return start.strftime("on %As at %l:%M%P")
+      return start.strftime("%a %l:%M%P")
     elsif class_type == "course"
-      return "#{start.strftime("on %As at %l:%M%P")} from #{start.strftime("%Y %B %d")} to #{self.end.strftime("%Y %B %d")}"
+      return "#{start.strftime("%a %l:%M%P")}, #{start.strftime("'%y %b %d")} - #{self.end.strftime("'%y %b %d")}"
     elsif class_type == "workshop"
-      return "starting #{start.strftime("%Y %B %d at %l:%M%P")} till #{self.end.strftime("%Y %B %d at %l:%M%P")}"
+      return "#{start.strftime("'%y %b %d %l:%M%P")} - #{self.end.strftime("'%y %b %d %l:%M%P")}"
     end
   end
 
