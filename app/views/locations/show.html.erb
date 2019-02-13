@@ -1,8 +1,12 @@
 <h2><%= @location.studio %></h2>
-<div class="card">
-  <div class="card-body">
-    <p><%= @location.address %>, <%= @location.city %></p>
-    <p><%= @location.state ? "#{@location.state}, ": "" %><%= @location.country %></p>
-  </div>
-</div>
+<h5 class="pt-2"><%= @location.address %>, <%= @location.city %></h5>
+<p><%= @location.state ? "#{@location.state}, ": "" %><%= @location.country %></p>
+<div class="row ">
 
+    <% @location.yoga_classes.each do |yc| %>
+      <div class="col-md-6 col-lg-4 pb-4" >
+        <%= render partial: "yoga_classes/yoga_class_card", locals: {yc: yc} %>
+      </div>
+    <% end %>
+
+  </div>

@@ -4,19 +4,7 @@
 
     <% @locations.each do |location| %>
       <div class="col-md-6 col-lg-4 pb-4" >
-        <div class="card shadow my-2" style="height: 100%" >
-          <div class="card-body">
-            <h5 class="card-title"><%= location.studio %> </h5>
-            <p>
-              <%= location.address %>
-              <%= location.city %><br>
-              <%= location.state %>
-              <%= location.country %>
-            </p>
-            <p><%= location.yoga_classes.count%> yoga classes</p>
-            <%= link_to 'Show', location_path(location), class: "btn btn-primary" %>
-          </div>
-        </div>
+        <%= render partial: "locations/location_card", locals: {location: location} %>
       </div>
     <% end %>
 
