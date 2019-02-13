@@ -11,7 +11,7 @@
                 <p><%= user.yoga_classes.count %> classes</p>
                 <%= link_to 'Show', user_path(user), class: "btn btn-primary" %>
               </div>
-              <% if user.info.image.attached? %>
+              <% if user.info&.image.attached? %>
                 <div class="col-sm ">
                   <%= image_tag user.info.image.variant(resize: '300X300'), class: "img-fluid" %>
                 </div>
