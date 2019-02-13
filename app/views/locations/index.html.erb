@@ -3,8 +3,8 @@
   <div class="row ">
 
     <% @locations.each do |location| %>
-      <div class="col-md-6 col-lg-4" >
-        <div class="card shadow-sm my-2" style="height: 11rem" >
+      <div class="col-md-6 col-lg-4 pb-4" >
+        <div class="card shadow my-2" style="height: 100%" >
           <div class="card-body">
             <h5 class="card-title"><%= location.studio %> </h5>
             <p>
@@ -13,6 +13,7 @@
               <%= location.state %>
               <%= location.country %>
             </p>
+            <p><%= location.yoga_classes.count%> yoga classes</p>
             <%= link_to 'Show', location_path(location), class: "btn btn-primary" %>
           </div>
         </div>
