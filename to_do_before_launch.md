@@ -8,7 +8,7 @@
 <!-- * simplify dates -->
 <!-- !!! fix search results !!! -->
 * footer with business stuff
-* more details on index pages, eg: photo
+<!-- * more details on index pages, eg: photo -->
 * more info on location show page
 <!-- * add admin user // AdminUser.create!(:email => '', :password => '', :password_confirmation => '') -->
 * pre-filter by location
