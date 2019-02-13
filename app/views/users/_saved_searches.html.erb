@@ -1,0 +1,17 @@
+<div class="col">
+  <div class="card  mb-4" >       
+    <div class="card-body">
+      <h5 class="card-title">Saved searches</h5>   
+      <ul class="list-group list-group-flush">
+        <% saved_searches.each do |search| %>           
+          <li class="list-group-item">
+            <%= link_to(search.name , user_saved_search_path(user, search) ) %>
+            <small>
+              <%= link_to "delete", user_saved_search_path(user, search), method: :delete, data: { confirm: 'Are you certain?' }, class: "badge badge-pill badge-info"%>
+            </small>
+          </li> 
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>  

@@ -1,0 +1,12 @@
+<div class="col">
+  <% if ( current_user == @user && current_user.is_teacher == true )%>                  
+    <%= link_to "Add a class", new_yoga_class_path, class: "btn btn-primary mb-4"%>  
+  <% end %>           
+  <div class="yclass-list">   
+    <% yoga_classes.each do |yc| %>
+      <div class="mb-4" >       
+        <%= render partial: "yoga_classes/yoga_class_card", locals: {yc: yc} %>
+      </div>
+    <% end %>
+  </div>
+</div>
