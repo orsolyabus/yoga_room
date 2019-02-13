@@ -10,7 +10,7 @@
 <!-- * more details on index pages, eg: photo -->
 <!-- * more info on location show page -->
 <!-- * add admin user // AdminUser.create!(:email => '', :password => '', :password_confirmation => '') -->
-* redesign yoga class show page
+<!-- * redesign yoga class show page -->
 * footer with business stuff
 * pre-filter by location
 * add yoga styles

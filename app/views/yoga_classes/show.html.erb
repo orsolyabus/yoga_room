@@ -1,23 +1,24 @@
-<div class="d-flex justify-content-center">
-  <div >
-    <h2><%= @yoga_class.title %></h2>
-
-    <div class="card" style="max-width: 700px">
-      <div class="card-body">
-        <h4 class="card-title"><small> teacher:</small> <%= @yoga_class.user.info&.spiritual_name %> - <%= @yoga_class.user.name %></h4>
-        <p><%= @yoga_class.description %></p>
-        <p>location: <%= @yoga_class.location.location_list_view %></p>
-        <p>class type: <%= @yoga_class.schedule.class_type %></p>
-        <p><%= @yoga_class.schedule.show_time %></p>
-        <% if current_user %>
-          <% if (can? :crud, @yoga_class) %>
-            <div class="d-flex justify-content-between">
-              <%= link_to "Edit class", edit_yoga_class_path(@yoga_class), class: "btn btn-primary" %>
-              <%= link_to 'Delete class', yoga_class_path(@yoga_class), method: :delete, data: { confirm: 'Are you certain?' }, class: "btn btn-danger" %>
-            </div>
-          <% end %>
-        <% end %>
+<div class="mx-auto" style="max-width: 1500px">
+  <h2><%= @yoga_class.title %></h2>
+  <div class="row pt-4">
+    <div class="col-md-4">
+      <h5>teacher: <%= link_to "#{@yoga_class.user.info&.spiritual_name} - #{@yoga_class.user.name}", user_path(@yoga_class.user) %></h5>
+      <p><%= link_to @yoga_class.location.location_list_view,location_path(@yoga_class.location) %><br/>
+      class type: <%= @yoga_class.schedule.class_type %><br/>
+      <%= @yoga_class.schedule.show_time %></p>
+    </div>
+    <div class="col">
+      <div class="card" >
+        <div class="card-body">
+          <p><%= @yoga_class.description %></p>
+        </div>
       </div>
     </div>
   </div>
+  <% if current_user && (can? :crud, @yoga_class) %>
+    <div class="d-flex justify-content-between">
+      <%= link_to "Edit class", edit_yoga_class_path(@yoga_class), class: "btn btn-primary" %>
+      <%= link_to 'Delete class', yoga_class_path(@yoga_class), method: :delete, data: { confirm: 'Are you certain?' }, class: "btn btn-danger" %>
+    </div>
+  <% end %>
 </div>
