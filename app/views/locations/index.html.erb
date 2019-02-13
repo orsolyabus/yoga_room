@@ -1,12 +1,10 @@
+<div class="mx-auto" style="max-width: 1500px">
   <h2>Locations</h2>
-
   <div class="row ">
-
     <% @locations.each do |location| %>
       <div class="col-md-6 col-lg-4 pb-4" >
         <%= render partial: "locations/location_card", locals: {location: location} %>
       </div>
     <% end %>
-
   </div>
 </div>
