@@ -1,6 +1,6 @@
 <div class="row ">
   <% @yoga_classes.each do |yc| %>
-    <div class="col-6 pb-4">
+    <div class="col-sm-6 pb-4">
       <%= render partial: "yoga_classes/yoga_class_card", locals: {yc: yc} %>
     </div>
   <% end %>
