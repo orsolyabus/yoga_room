@@ -21,14 +21,18 @@
       <%= render "layouts/navbar" %>
     </header>
 
-    <main class="container-fluid p-2">
+    <main class="container-fluid p-2" style="min-height: 90vh">
 
-      <div class='flash-container'>
+      <div class='flash-container' >
         <%= render "layouts/flash" %>
       </div>
       <div class="container-fluid">
         <%= yield %>
       </div>
     </main>
+    
+    <footer class="">
+      <%= render "layouts/footer" %>
+    </footer>
   </body>
 </html>
