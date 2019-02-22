@@ -33,6 +33,7 @@ $dark:          #512324 !default;
 );
  
 @import "bootstrap";
+@import 'gdpr/cookie_consent';
 
 * {
   font-family: 'Montserrat', sans-serif;
