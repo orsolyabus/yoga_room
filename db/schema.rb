@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_202840) do
+ActiveRecord::Schema.define(version: 2019_03_05_185129) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -162,6 +162,7 @@ ActiveRecord::Schema.define(version: 2019_02_05_202840) do
     t.boolean "is_teacher", default: false
     t.datetime "last_login"
     t.string "second_email", default: "orsidoestest@gmail.com"
+    t.string "default_country"
   end
 
   create_table "yoga_classes", force: :cascade do |t|

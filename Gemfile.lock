@@ -149,6 +149,7 @@ GEM
       js_cookie_rails
       rails
       sass-rails
+    geocoder (1.5.1)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     haml (5.0.4)
@@ -362,6 +363,7 @@ DEPENDENCIES
   faker
   friendly_id
   gdpr
+  geocoder
   haml
   hirb
   jbuilder (~> 2.5)

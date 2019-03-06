@@ -14,6 +14,7 @@
 * footer with business stuff
 * pre-filter by location
 * add yoga styles
-* add cookie agreement
+<!-- * add cookie agreement -->
+* add privacy policy
   
 * keep the colours
