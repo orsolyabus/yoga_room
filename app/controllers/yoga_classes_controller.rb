@@ -2,6 +2,7 @@ class YogaClassesController < ApplicationController
   before_action :find_yoga_class, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :authorize_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :get_country, only: [:index, :search]
 
   def new
     @yoga_class = YogaClass.new
@@ -31,7 +32,7 @@ class YogaClassesController < ApplicationController
   end
 
   def index
-    @yoga_classes = YogaClass.all.order(created_at: :desc).includes(:location, :schedule)
+    @yoga_classes = helpers.search_this(YogaClass.all, {"country"=> session[:country]})
     @saved_search = SavedSearch.new
   end
 
@@ -54,7 +55,10 @@ class YogaClassesController < ApplicationController
 
   def search
     @params = params
-    @yoga_classes = helpers.search_this(YogaClass.all, @params).order(created_at: :desc)
+    if  @params["country"] == ""
+      @params["country"] = session[:country]
+    end
+    @yoga_classes = helpers.search_this(YogaClass.all, @params)
     @saved_search ||= SavedSearch.new
     respond_to do |format|
       format.js { render }
@@ -77,6 +81,11 @@ class YogaClassesController < ApplicationController
       flash[:warning] = "you have to be a teacher to do that" 
       redirect_to yoga_classes_path
     end
+  end
+  
+  def get_country
+    session[:country] ||= Geocoder.search(request.remote_ip).first.country
+    # session[:country] ||= Geocoder.search("5.204.255.255").first.country
   end
 
 end

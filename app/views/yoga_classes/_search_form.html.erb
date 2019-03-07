@@ -20,9 +20,9 @@
         <%= f.input :studio, required: false , wrapper_html: {class: "col"}, input_html:{value: params[:studio]} %>
         <%= f.input :city, required: false , wrapper_html: {class: "col"}, input_html:{value: params[:city]} %><%# dropdown %>
       </div>
-      city <%= request.location %>
+      
       <div class="row">
-        <%= f.input :country, required: false , wrapper_html: {class: "col"}, input_html:{value: params[:country]||request.location.city} %><%# dropdown %>
+        <%= f.input :country, required: false , wrapper_html: {class: "col"}, input_html:{value: (params[:country] )} %><%# dropdown %>
         <%= f.input :state, required: false , wrapper_html: {class: "col"}, input_html:{value: params[:state]} %> <%# dropdown %>
       </div>
     </div>

@@ -11,10 +11,13 @@
 <!-- * more info on location show page -->
 <!-- * add admin user // AdminUser.create!(:email => '', :password => '', :password_confirmation => '') -->
 <!-- * redesign yoga class show page -->
-* footer with business stuff
-* pre-filter by location
-* add yoga styles
 <!-- * add cookie agreement -->
+<!-- * create footer -->
+<!-- * pre-filter by user location -->
+* add business stuff to footer
+* fix country code vs country name issue
+* add geocoding to class locations
+* add yoga styles
 * add privacy policy
   
 * keep the colours
