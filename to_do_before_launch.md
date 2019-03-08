@@ -14,10 +14,11 @@
 <!-- * add cookie agreement -->
 <!-- * create footer -->
 <!-- * pre-filter by user location -->
-* add business stuff to footer
-* fix country code vs country name issue
 * add geocoding to class locations
+* fix country code vs country name issue
+
 * add yoga styles
 * add privacy policy
-  
+* add business stuff to footer  
+* delete second e-mail from user
 * keep the colours

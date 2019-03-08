@@ -26,7 +26,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 gem "cancancan"
 # bootstrap
-gem 'bootstrap' '>= 4.3.1'
+gem 'bootstrap', '>= 4.3.1'
 gem "jquery-rails"
 
 gem 'pry-rails'
