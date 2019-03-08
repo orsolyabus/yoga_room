@@ -12,9 +12,7 @@ class LocationsController < ApplicationController
   end
 
   def create
-    params = location_params
-    params[:country] = session[:country]
-    @location = Location.new params
+    @location = Location.new location_params
     respond_to do |format|
       if @location.save
         @yoga_class = YogaClass.new
@@ -38,7 +36,7 @@ class LocationsController < ApplicationController
   end
 
   def location_params
-    params.require(:location).permit(:city, :region, :address, :studio )
+    params.require(:location).permit(:city, :region, :address, :studio, :country )
   end
 
   def authorize_user!

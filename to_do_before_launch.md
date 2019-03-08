@@ -14,7 +14,8 @@
 <!-- * add cookie agreement -->
 <!-- * create footer -->
 <!-- * pre-filter by user location -->
-* add geocoding to class locations
+<!-- * add geocoding to class locations -->
+<!-- * make country automated -->
 * fix country code vs country name issue
 
 * add yoga styles
