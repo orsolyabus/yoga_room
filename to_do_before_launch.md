@@ -16,8 +16,7 @@
 <!-- * pre-filter by user location -->
 <!-- * add geocoding to class locations -->
 <!-- * make country automated -->
-* fix country code vs country name issue
-
+* find real places for locations, support autocomplete
 * add yoga styles
 * add privacy policy
 * add business stuff to footer  

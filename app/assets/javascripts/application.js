@@ -15,5 +15,6 @@
 //= require bootstrap
 //= require rails-ujs
 //= require activestorage
-//= require_tree .
 //= require gdpr/cookie_consent
+//= require_tree .
+
