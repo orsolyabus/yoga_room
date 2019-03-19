@@ -13,7 +13,9 @@ class LocationsController < ApplicationController
   end
 
   def create
-    @location = Location.new location_params
+    params = location_params
+    params[:country] = current_user.default_country
+    @location = Location.new params
     respond_to do |format|
       if @location.save
         @yoga_class = YogaClass.new

@@ -21,7 +21,8 @@ super_user = User.create(
   name: "Orsi",
   email: "orsidoestest@gmail.com",
   is_teacher: true,
-  password: PASSWORD
+  password: PASSWORD,
+  default_country: "Ca"
 )
 # users + infos
 10.times do

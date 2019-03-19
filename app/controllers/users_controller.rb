@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   before_action :find_user, only: [:show, :edit, :update, :destroy]
-  before_action :get_country, only: [:index]
+  before_action :get_country, only: [:index, :create]
   before_action :authenticate_user!, only: [:edit, :update, :destroy]
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
@@ -23,6 +23,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.default_country = session[:country]
     if @user.save
       session[:user_id] = @user.id
       flash[:success] = "account successfully created."
