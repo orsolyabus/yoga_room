@@ -82,10 +82,5 @@ class YogaClassesController < ApplicationController
       redirect_to yoga_classes_path
     end
   end
-  
-  def get_country
-    session[:country] ||= Geocoder.search(request.remote_ip).first.country
-    # session[:country] ||= Geocoder.search("5.204.255.255").first.country
-  end
 
 end

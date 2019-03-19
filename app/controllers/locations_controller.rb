@@ -2,9 +2,10 @@ class LocationsController < ApplicationController
   before_action :find_location, only: [:show, :update, :destroy]
   before_action :authenticate_user!, only: [:new, :create, :update, :destroy]
   before_action :authorize_user!, only: [:new, :create, :update, :destroy]
+  before_action :get_country, only: [:index]
 
   def index
-    @locations = Location.all
+    @locations = Location.where("country ILIKE ?", session[:country])
   end
 
   def new

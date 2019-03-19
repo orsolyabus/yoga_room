@@ -4,5 +4,6 @@ FactoryBot.define do
     sequence(:email) { |n| Faker::Internet.email.sub('@', "#{n}@") }
     password { "secret" }
     is_teacher { true }
+    default_country { ["Hu", "Ca"].sample}
   end
 end
