@@ -41,13 +41,14 @@ module YogaClassesHelper
       query = query.where(location: location)
     end
 
-    if params["state"]
-      location = Location.where(state: params["state"].capitalize)
+    if params["region"]
+      location = Location.where(region: params["region"].capitalize)
       query = query.where(location: location)
     end
 
     if params["country"]
-      location = Location.where(country: params["country"].capitalize)
+      search = params["country"]
+      location = Location.where("country ILIKE ? ", search)
       query = query.where(location: location)
     end
 

@@ -1,7 +1,7 @@
 <div class="mx-auto" style="max-width: 1500px">
   <h2><%= @location.studio %></h2>
   <h5 class="pt-2"><%= @location.address %>, <%= @location.city %></h5>
-  <p><%= @location.state ? "#{@location.state}, ": "" %><%= @location.country %></p>
+  <p><%= @location.region ? "#{@location.region}, ": "" %><%= @location.country %></p>
   <div class="row ">
     <% @location.yoga_classes.each do |yc| %>
       <div class="col-md-6 col-lg-4 pb-4" >

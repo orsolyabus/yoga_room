@@ -44,8 +44,8 @@ class SearchYogaClasses
       @class_list = @class_list.where(location: location)
     end
 
-    if @params["state"]
-      location = Location.where(state: @params["state"].capitalize)
+    if @params["region"]
+      location = Location.where(region: @params["region"].capitalize)
       @class_list = @class_list.where(location: location)
     end
 
