@@ -1,0 +1,12 @@
+<% if cookies && cookies['gdpr.cookie_consent.ok'] != 'true' %>
+  <div class="gdpr__cookie_consent js-gdpr__cookie_consent">
+    <div class="gdpr__cookie_consent__text">
+      <%#= t('gdpr.cookie_consent.text') %>
+      <%#= t('gdpr.cookie_consent.learn_more_html', link: t('gdpr.privacy_policy')) %>
+      By navigating on this website, you agree to our use of cookies to personalize  website features and to measure the audience and use of this website. To learn more about cookies and privacy policy: <%= link_to "click here", privacy_path %> 
+    </div>
+    <div class="gdpr__cookie_consent__buttons">
+      <button class="gdpr__cookie_consent__buttons__ok js-gdpr__cookie_consent__buttons__ok btn btn-primary btn-xs">I agree</button>
+    </div>
+  </div>
+<% end %>

@@ -7,6 +7,9 @@ class HomeController < ApplicationController
     @issue = Issue.new
   end
 
+  def privacy
+  end
+    
   private
 
   
