@@ -16,9 +16,12 @@
 <!-- * pre-filter by user location -->
 <!-- * add geocoding to class locations -->
 <!-- * make country automated -->
-* find real places for locations, support autocomplete
-* add yoga styles
+<!-- * filter locations when creating new yoga class -->
+
 * add privacy policy
 * add business stuff to footer  
 * delete second e-mail from user
-* keep the colours
+
+<!-- maybe -->
+* find real places for locations, support autocomplete
+* add yoga styles

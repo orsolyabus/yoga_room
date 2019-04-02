@@ -1,8 +1,7 @@
 <%= simple_form_for @yoga_class do |f| %>
-  <% @form = f %>
   <%= f.input :title %>
   <%= f.input :description %>
-  <%= render "location" %>
+  <%= f.association :location, collection: Location.where("country ILIKE ?", current_user.default_country).order(:city, :studio), label_method: :location_list_view, hint: "Choose an existing location or create a new" %>
 
   <button type="button" class="btn btn-secondary mb-3" data-toggle="modal" data-target="#newLocationForm">
     New Location
