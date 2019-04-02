@@ -30,10 +30,14 @@
       </div>
     </div>
   </div>
-  <div class="col-sm-3 mt-4">
-    <p>This site is a work in progress. If you have an idea for improvement, please contact us.</p>
-    <p>Thank you for your understanding!</p>
-    <img src="development.svg" class="img-fluid" style="max-width: 100%">
+  <div class="col-sm-3 col-xl-2">
+    <div class="card shadow ">
+      <div class="card-body">
+        <p>This site is a work in progress. If you have an idea for improvement, please <%= link_to("contact us", :contact)%>.</p>
+        <p>Thank you for your understanding!</p>
+        <img src="development.svg" class="img-fluid" style="max-width: 100%">
+      </div>
+    </div>
   </div>
 </div>  
   
