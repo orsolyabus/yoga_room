@@ -13,7 +13,6 @@
 //= require jquery3
 //= require popper
 //= require bootstrap
-//= require rails-ujs
 //= require activestorage
 //= require gdpr/cookie_consent
 //= require_tree .
