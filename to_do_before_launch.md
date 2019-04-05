@@ -18,8 +18,8 @@
 <!-- * make country automated -->
 <!-- * filter locations when creating new yoga class -->
 <!-- * delete second e-mail from user -->
+<!-- * add business stuff to footer   -->
 * add privacy policy
-* add business stuff to footer  
 
 <!-- maybe -->
 * find real places for locations, support autocomplete
