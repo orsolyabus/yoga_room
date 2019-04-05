@@ -5,7 +5,7 @@ class TeacherLoginReminderMailer < ApplicationMailer
     @user = user
     @yoga_classes = YogaClass.where(user: user).includes(:schedule, :location)
     mail(
-      to: @user.second_email,
+      to: @user.email,
       subject: "Are your yoga classes still up to date?"
     )
   end

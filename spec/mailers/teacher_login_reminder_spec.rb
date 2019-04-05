@@ -16,7 +16,7 @@ RSpec.describe TeacherLoginReminderMailer, type: :mailer do
   end
 
   it "has the correct address" do
-    expect(@email.to).to eq([@user.second_email])
+    expect(@email.to).to eq([@user.email])
   end
 
   it "has the correct sender" do

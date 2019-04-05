@@ -17,10 +17,9 @@
 <!-- * add geocoding to class locations -->
 <!-- * make country automated -->
 <!-- * filter locations when creating new yoga class -->
-
+<!-- * delete second e-mail from user -->
 * add privacy policy
 * add business stuff to footer  
-* delete second e-mail from user
 
 <!-- maybe -->
 * find real places for locations, support autocomplete
