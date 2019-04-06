@@ -6,12 +6,18 @@
 
   <div class="col " >
     <div class="row ">
+    
       <div class="col-lg-6 text-center mt-4 px-4" style="">
         <h3>Looking for a yoga class? </h3>
         
         <%= link_to("Search here", yoga_classes_path, class: "btn btn-primary mt-2")%>
       </div>
-      <div class="col-lg-6 text-center mt-4 px-4">
+      
+      <div class="col justify-content-center d-flex d-block d-md-none">
+        <img src="mindfulness.svg" alt="image" class="img-fluid" style="max-width: 100% ; z-index: 0; max-height: 300px" >
+      </div>
+        
+      <div class="col-lg-6 text-center my-4 px-4">
         <h3 >Are you a teacher?</h3>
         <h5>Sign up and add your classes!</h5>
         <div class="text-left" >  
@@ -24,18 +30,23 @@
         </div>
       </div>
     </div>
-    <div class="row justify-content-center d-none d-sm-block ">
+    
+    <div class="row justify-content-center d-none d-md-block ">
       <div class="col justify-content-center d-flex">
         <img src="mindfulness.svg" alt="image" class="img-fluid" style="max-width: 100% ; z-index: 0" >
       </div>
     </div>
   </div>
-  <div class="col-sm-3 col-xl-2">
+  
+  <div class="col-md-3 col-xl-2">
     <div class="card shadow ">
       <div class="card-body">
         <p>This site is a work in progress. If you have an idea for improvement, please <%= link_to("contact us", :contact)%>.</p>
         <p>Thank you for your understanding!</p>
-        <img src="development.svg" class="img-fluid" style="max-width: 100%">
+        <div class="col justify-content-center d-flex d-block d-md-none">
+          <img src="development.svg" class="img-fluid" style="max-width: 100%; max-height: 220px">
+        </div>
+        <img src="development.svg" class="img-fluid d-none d-md-block" style="max-width: 100%; max-height: 220px">
       </div>
     </div>
   </div>
