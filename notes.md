@@ -37,3 +37,6 @@
 * closed online classes, with online materials
 * video streaming on the online classes
 * saving / storing class videos
+
+https://stackoverflow.com/questions/44251634/heroku-pipeline-run-commands-on-production-app-not-staging?rq=1
+heroku logs --tail --app yogaroom

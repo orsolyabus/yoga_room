@@ -33,7 +33,7 @@
 - [ ] comment section on classes
 - [ ] searchable locations 
 - [ ] add minimap to location show
-- [ ] add classes to location show
+- [x] add classes to location show
   
 - [ ] elastic search
 - [ ] i18n

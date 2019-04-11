@@ -1,0 +1,19 @@
+* find real places for locations, support autocomplete
+* searchable locations
+* add "created_by" and "used_by" to Location
+* add map to location show page
+
+* elastic search
+* i18n
+* news feed of newest yoga classes on landing page
+  
+* review section on classes
+* add yoga styles
+
+** premium **
+* class sing up
+* ask the teacher messaging
+* featured class
+
+?
+* request a class

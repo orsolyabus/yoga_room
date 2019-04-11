@@ -19,8 +19,7 @@
 <!-- * filter locations when creating new yoga class -->
 <!-- * delete second e-mail from user -->
 <!-- * add business stuff to footer   -->
+* add "how to use" to home page
 * add privacy policy
 
-<!-- maybe -->
-* find real places for locations, support autocomplete
-* add yoga styles
+* setup scheduler for background jobs https://devcenter.heroku.com/articles/scheduler#installing-the-add-on
