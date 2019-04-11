@@ -1,13 +1,14 @@
 * find real places for locations, support autocomplete
-* searchable locations
+* search by location
 * add "created_by" and "used_by" to Location
 * add map to location show page
 
 * elastic search
 * i18n
 * news feed of newest yoga classes on landing page
+* follow favorites, https://getstream.io/
   
-* review section on classes
+* review section on classes, teachers, studios
 * add yoga styles
 
 ** premium **

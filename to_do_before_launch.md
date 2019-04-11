@@ -21,5 +21,5 @@
 <!-- * add business stuff to footer   -->
 * add "how to use" to home page
 * add privacy policy
-
+* add "created_by" to Location
 * setup scheduler for background jobs https://devcenter.heroku.com/articles/scheduler#installing-the-add-on
