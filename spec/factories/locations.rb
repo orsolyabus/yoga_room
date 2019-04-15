@@ -3,6 +3,6 @@ FactoryBot.define do
     country { ["Ca", "Hu"].sample }
     city { ["Richmond", "Vancouver", "Surrey", "Coquitlam"].sample }
     address { Faker::Address.street_address }
-    studio { Faker::StarTrek.location }
+    studio { Faker::TvShows::StarTrek.location }
   end
 end
