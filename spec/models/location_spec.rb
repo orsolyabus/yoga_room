@@ -43,5 +43,11 @@ RSpec.describe Location, type: :model do
       yoga_class2 = FactoryBot.create(:yoga_class, location: location)
       expect(location.yoga_classes).to eq [yoga_class1, yoga_class2]
     end
+    
+    it("was created by a user") do
+      user = FactoryBot.create(:user)
+      location = FactoryBot.create(:location, created_by: user)
+      expect(location.created_by).to be_a User
+    end
   end
 end
