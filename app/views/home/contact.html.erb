@@ -1,14 +1,13 @@
 <div class="" >
   <div class="mx-auto" style="max-width: 600px">
-    <h2>Something doesn't work?</h2>
-    <h4 class="mt-4">Please contact the developer:</h4>
-    <p>dev.orsolya.bus@gmail.com</p>
+    <h2>Contact YogaRoom!</h2>
+    <h5 class="mt-4">If you have a question, suggestion or something doesn't work, contact us here</h5>
   </div>
   <div class="mx-auto mt-4" style="max-width: 600px">
     <%= simple_form_for(@issue) do |f| %>
       <%= f.input :sender, label:"Your email" %>
       <%= f.input :subject %>
-      <%= f.input :message%>
+      <%= f.input :message %>
 
       <%= f.submit "Send", class: "btn btn-primary" %>
       
