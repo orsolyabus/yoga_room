@@ -3,10 +3,9 @@
     <h5 class="card-title">
       
       <% if yc.schedule.class_type == "regular" %>
-      <i class="far fa-calendar text-dark"></i>
+        <i class="far fa-calendar text-dark"></i>
       <% elsif yc.schedule.class_type == "workshop"%>
-      <i class="far fa-calendar-plus text-success"></i>
-      
+        <i class="far fa-calendar-plus text-success"></i>
       <% elsif yc.schedule.class_type == "course"%>
         <i class="far fa-calendar-alt text-warning"></i>
       <% end %>
