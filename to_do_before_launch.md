@@ -20,7 +20,7 @@
 <!-- * delete second e-mail from user -->
 <!-- * add business stuff to footer   -->
 * add "how to use" to home page
-* add terms of use
+<!-- * add terms of use -->
 <!-- * add privacy policy -->
 <!-- * add "created_by" to Location -->
 * setup scheduler for background jobs https://devcenter.heroku.com/articles/scheduler#installing-the-add-on

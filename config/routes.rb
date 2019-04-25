@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   root "home#index"
   get "/contact", to: "home#contact", as: :contact
   get "/privacy", to: "home#privacy", as: :privacy
+  get "/terms", to: "home#terms", as: :terms
   
   resource :issues, only: [:create]
 
