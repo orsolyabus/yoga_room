@@ -5,7 +5,8 @@ class UsersController < ApplicationController
   before_action :authorize_user!, only: [:edit, :update, :destroy]
 
   def index
-    @users = User.includes(:info, :yoga_classes).where(is_teacher: true).where("default_country ILIKE ?", session[:country])
+    country = session[:country] # why is this undifined even when logged in?
+    @users = User.includes(:info, :yoga_classes).where(is_teacher: true)
   end
 
   def show
