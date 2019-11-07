@@ -4,7 +4,8 @@
 * add map to location show page
 
 * elastic search
-* i18n
+// * i18n
+* twitter / FB integration (login option, post feed on profile)
 * news feed of newest yoga classes on landing page
 * follow favorites, https://getstream.io/
   
