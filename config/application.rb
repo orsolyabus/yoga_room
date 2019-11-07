@@ -29,7 +29,20 @@ module KundaliniTeacherBase
 
     # Don't generate system test files.
     config.generators.system_tests = nil
-
+    config.generators do |g|
+      g.helper = false
+      g.assets = false
+    end
+    config.middleware.insert_before(0, Rack::Cors) do
+      allow do
+        origins "localhost:4000"
+        resource(
+          "/api/*",
+          headers: :any,
+          methods: [:get]
+        )
+      end
+    end
     config.time_zone = 'Pacific Time (US & Canada)'
     config.active_record.default_timezone = :local 
     
