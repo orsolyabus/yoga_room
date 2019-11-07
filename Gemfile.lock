@@ -156,6 +156,10 @@ GEM
     geocoder (1.5.1)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
+    graphiql-rails (1.7.0)
+      railties
+      sprockets-rails
+    graphql (1.9.15)
     haml (5.0.4)
       temple (>= 0.8.0)
       tilt
@@ -380,6 +384,8 @@ DEPENDENCIES
   friendly_id
   gdpr
   geocoder
+  graphiql-rails
+  graphql (~> 1.9, >= 1.9.15)
   haml
   hirb
   jbuilder (~> 2.5)
