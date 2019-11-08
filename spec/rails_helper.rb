@@ -58,4 +58,11 @@ RSpec.configure do |config|
   config.filter_rails_from_backtrace!
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
+  
+  config.include FactoryBot::Syntax::Methods
+  # Thanks to that line we will be able to use shortened syntax 
+  # for building and creating objects using factories. 
+  # It means that instead of FactoryBot.create(:book) 
+  # we will be able to simply write create(:book).
+  
 end

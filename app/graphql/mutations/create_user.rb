@@ -9,13 +9,8 @@ module Mutations
     # return type from the mutation
     type Types::UserType
 
-    def resolve(name: nil, email: nil, is_teacher: false, password: nil)
-      User.create!(
-        name: name,
-        email: email,
-        is_teacher: is_teacher,
-        password: password,
-      )
+    def resolve(**attributes)
+      User.create!(**attributes)
     end
   end
 end
