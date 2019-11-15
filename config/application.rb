@@ -34,14 +34,24 @@ module KundaliniTeacherBase
       g.assets = false
     end
     config.middleware.insert_before(0, Rack::Cors) do
+      # allow do
+      #   origins "localhost:4000", "http://localhost:4000"
+      #   resource(
+      #     "/api/*",
+      #     headers: :any,
+      #     methods: [:get]
+      #   )
+      # end
+      
       allow do
-        origins "localhost:4000"
+        origins "localhost:4000", "http://localhost:4000"
         resource(
-          "/api/*",
+          "/graphql",
           headers: :any,
-          methods: [:get]
+          methods: [:get, :post, :options]
         )
       end
+      
     end
     config.time_zone = 'Pacific Time (US & Canada)'
     config.active_record.default_timezone = :local 
