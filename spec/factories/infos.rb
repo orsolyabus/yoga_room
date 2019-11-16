@@ -5,7 +5,7 @@ FactoryBot.define do
     spiritual_name { Faker::Space.constellation }
     image_url { Faker::Avatar.image }
     webpage { "www.#{Faker::Internet.domain_name}" }
-    introduction { Faker::Lorem.paragraphs(2, true) }
+    introduction { Faker::Lorem.paragraph }
     phone { Faker::PhoneNumber.phone_number }
     public_contact { false }
   end
