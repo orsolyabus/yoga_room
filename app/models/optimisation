@@ -1,0 +1,6 @@
+info -> profile
+query by profile not user
+  
+yoga_class <+ schedule (no one-one relation)
+
+user has many locations

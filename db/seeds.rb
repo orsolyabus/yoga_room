@@ -11,7 +11,7 @@ Info.delete_all
 Schedule.delete_all
 YogaClass.delete_all
 Location.delete_all
-
+Profile.delete_all
 
 User.delete_all
 
@@ -24,13 +24,14 @@ super_user = User.create(
   password: PASSWORD,
   default_country: "Ca"
 )
-# users + infos
+# users + profiles
 10.times do
   u = FactoryBot.create(:user)
-  i = FactoryBot.create(:info, user: u)
+  profile = FactoryBot.create(:profile, user: u)
 end
+puts "users and profiles seeded"
 
-teachers = User.all
+teachers = Profile.all
 
 # location
 10.times do 
@@ -38,18 +39,18 @@ teachers = User.all
 end
 
 locations = Location.all
-
+puts "locations seeded"
 # yoga class + schedule
 30.times do
-  yc = FactoryBot.build(:yoga_class, user: teachers.sample)
+  yc = FactoryBot.build(:yoga_class, profile: teachers.sample)
   yc.location = locations.sample
   yc.save
   s = FactoryBot.create(:schedule, yoga_class: yc)
 end
-
+puts "yoga classes seeded"
 # saved search
 30.times do
-  s = FactoryBot.create(:saved_search, user: teachers.sample)
+  s = FactoryBot.create(:saved_search, user: User.all.sample)
 end
 
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

@@ -3,11 +3,12 @@ require "rails_helper"
 RSpec.describe TeacherLoginReminderMailer, type: :mailer do
   before do
     @user = FactoryBot.create(:user)
+    @profile =FactoryBot.create(:profile, user: @user)
     @email = TeacherLoginReminderMailer.send_reminder(@user).deliver
     @yoga_classes = [
-      FactoryBot.create(:yoga_class, user: @user),
-      FactoryBot.create(:yoga_class, user: @user),
-      FactoryBot.create(:yoga_class, user: @user),
+      FactoryBot.create(:yoga_class, profile: @profile),
+      FactoryBot.create(:yoga_class, profile: @profile),
+      FactoryBot.create(:yoga_class, profile: @profile),
     ]
   end
 
