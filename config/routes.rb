@@ -27,7 +27,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :yoga_classes
       resources :locations
-      get "/teachers", to: "users#teachers", as: :teachers
+      get "/teachers", to: "profiles#teachers", as: :teachers
     end
   end
 
