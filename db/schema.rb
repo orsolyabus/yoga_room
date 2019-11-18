@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_16_053353) do
+ActiveRecord::Schema.define(version: 2019_11_18_022254) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -133,8 +133,8 @@ ActiveRecord::Schema.define(version: 2019_11_16_053353) do
     t.string "region"
     t.float "latitude"
     t.float "longitude"
-    t.bigint "created_by_id"
-    t.index ["created_by_id"], name: "index_locations_on_created_by_id"
+    t.bigint "profile_id"
+    t.index ["profile_id"], name: "index_locations_on_profile_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -196,7 +196,7 @@ ActiveRecord::Schema.define(version: 2019_11_16_053353) do
   end
 
   add_foreign_key "infos", "users"
-  add_foreign_key "locations", "users", column: "created_by_id"
+  add_foreign_key "locations", "profiles"
   add_foreign_key "profiles", "users"
   add_foreign_key "saved_searches", "users"
   add_foreign_key "schedules", "yoga_classes"

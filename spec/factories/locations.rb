@@ -4,6 +4,6 @@ FactoryBot.define do
     city { ["Richmond", "Vancouver", "Surrey", "Coquitlam"].sample }
     address { Faker::Address.street_address }
     studio { Faker::TvShows::StarTrek.location }
-    association(:created_by, factory: :user)
+    association(:profile, factory: :profile)
   end
 end
