@@ -1,7 +1,7 @@
 class YogaClass < ApplicationRecord
-  validates :title, :description, :location_id, presence: true
+  validates :title, :description, presence: true
   belongs_to :profile 
-  belongs_to :location
+  belongs_to :location, optional: true
   
   has_one :schedule, dependent: :destroy
 
