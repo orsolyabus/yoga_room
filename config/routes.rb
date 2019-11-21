@@ -3,10 +3,13 @@ Rails.application.routes.draw do
   
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  
   resources :users do 
-    resources :infos
     resources :saved_searches, only: [:create, :destroy, :show]
   end
+  
+  resources :profiles
+  
   get "users/:id/thx", to: "users#thank_you", as: :thx
   
   resource :sessions, only: [:new, :create, :destroy]
