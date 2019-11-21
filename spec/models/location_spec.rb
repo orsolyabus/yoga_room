@@ -20,12 +20,6 @@ RSpec.describe Location, type: :model do
       expect(location.errors.messages).to have_key :address
     end
     
-    it("address must be unique in a city") do
-      location1 = FactoryBot.create(:location, city:"richmond", address: "7700 Dampier Dr")
-      location2 = FactoryBot.build(:location,city:"richmond", address: "7700 Dampier Dr")
-      location2.valid?
-      expect(location2.errors.messages[:address]).to eq ["This location already exists"]
-    end
   end
   
   describe("geocoding") do
@@ -44,10 +38,11 @@ RSpec.describe Location, type: :model do
       expect(location.yoga_classes).to eq [yoga_class1, yoga_class2]
     end
     
-    it("was created by a user") do
+    it("belongs to a profile") do
       user = FactoryBot.create(:user)
-      location = FactoryBot.create(:location, created_by: user)
-      expect(location.created_by).to be_a User
+      profile = FactoryBot.create(:profile, user: user)
+      location = FactoryBot.create(:location, profile: profile)
+      expect(location.profile).to be_a Profile
     end
   end
 end
