@@ -2,8 +2,8 @@
   <h2><%= @yoga_class.title %></h2>
   <div class="row pt-4">
     <div class="col-md-4">
-      <h5>teacher: <%= link_to "#{@yoga_class.user.info&.spiritual_name} - #{@yoga_class.user.name}", user_path(@yoga_class.user) %></h5>
-      <p><%= link_to @yoga_class.location.location_list_view,location_path(@yoga_class.location) %><br/>
+      <h5>teacher: <%= link_to "#{@yoga_class.profile.name}", profile_path(@yoga_class.profile) %></h5>
+      <p><%= @yoga_class.location.location_list_view %><br/>
       class type: <%= @yoga_class.schedule.class_type %><br/>
       <%= @yoga_class.schedule.show_time %></p>
     </div>

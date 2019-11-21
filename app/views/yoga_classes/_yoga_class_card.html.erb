@@ -11,7 +11,7 @@
       <% end %>
       <%= link_to(yc.title, yoga_class_path(yc))%>
     </h5>
-    <p><%= yc.location.location_list_view %></p>
+    <p><%= yc.location&.location_list_view %></p>
     <p><%= yc.schedule.show_time %></p>
   </div>
 </div>
