@@ -14,12 +14,12 @@ class Api::V1::YogaClassesController < ApplicationController
   end
 
   def index 
-    yoga_classes = YogaClass.all
-    render json: yoga_classes
+    yoga_classes = YogaClass.all.includes(:schedule, :profile, :location)
+    render json: yoga_classes, each_serializer: SimpleYogaClassSerializer, include: [:schedule, :profile, :location]
   end
 
   def show
-    render json: yoga_class
+    render json: yoga_class, serializer: FullYogaClassSerializer, include: [:location, :profile, :schedule]
   end
 
   def update
@@ -38,7 +38,7 @@ class Api::V1::YogaClassesController < ApplicationController
   private
 
   def yoga_class
-    YogaClass.find params[:id]
+    YogaClass.includes(:schedule, :profile, :location).find(params[:id])
   end
 
   def yoga_class_params
