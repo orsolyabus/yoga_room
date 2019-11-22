@@ -30,6 +30,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :yoga_classes
       resources :locations
+      resources :profiles
+      resources :users, only: [:show, :create, :update, :destroy]
       get "/teachers", to: "profiles#teachers", as: :teachers
     end
   end
