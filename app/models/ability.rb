@@ -15,8 +15,8 @@ class Ability
       user == this_user
     end
 
-    can(:crud, Info) do |info|
-      user == info.user
+    can(:crud, Profile) do |profile|
+      profile.persisted? ? user == profile.user : true
     end
 
     can(:crud, YogaClass) do |yc|
